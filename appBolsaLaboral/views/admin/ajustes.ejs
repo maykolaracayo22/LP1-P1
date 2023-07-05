@@ -1,0 +1,124 @@
+<%- include('pantalla/header'); %>
+<style>
+    .settings-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    .settings-window {
+      width: 400px;
+      background-color: #f2f2f2;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .settings-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .settings-label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  
+    .settings-input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+  
+    .settings-checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  
+    .settings-checkbox-input {
+      margin-right: 10px;
+    }
+  
+    .settings-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4c51bf;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+    }
+  
+    .settings-button:hover {
+      background-color: #434190;
+    }
+  </style>
+  
+  <div class="settings-container">
+    <div class="settings-window">
+      <h2 class="settings-title">Ajustes</h2>
+      <label class="settings-label" for="theme">Tema:</label>
+      <select class="settings-input" id="theme" name="theme">
+        <option value="light">Claro</option>
+        <option value="dark">Oscuro</option>
+      </select>
+      <label class="settings-label" for="language">Idioma:</label>
+      <select class="settings-input" id="language" name="language">
+        <option value="en">Inglés</option>
+        <option value="es">Español</option>
+      </select>
+      <label class="settings-label" for="fontSize">Tamaño de texto:</label>
+      <input type="range" class="settings-input" id="fontSize" name="fontSize" min="12" max="24" step="2" value="14">
+      <div class="settings-checkbox-label">
+        <input type="checkbox" class="settings-checkbox-input" id="notifications" name="notifications">
+        <label class="settings-label" for="notifications">Recibir notificaciones</label>
+      </div>
+      <a href="dashboarde" class="settings-button" onclick="confirmAndSaveSettings()">Guardar ajustes</a>
+    </div>
+  </div>
+  
+  <script>
+    function confirmAndSaveSettings() {
+      var theme = document.getElementById('theme').value;
+      var language = document.getElementById('language').value;
+      var fontSize = document.getElementById('fontSize').value;
+      var notifications = document.getElementById('notifications').checked;
+      
+      var confirmationMessage = '¿Estás seguro de que quieres guardar los siguientes ajustes?\n\n'
+        + 'Tema: ' + theme + '\n'
+        + 'Idioma: ' + language + '\n'
+        + 'Tamaño de texto: ' + fontSize + 'px\n'
+        + 'Recibir notificaciones: ' + (notifications ? 'Sí' : 'No');
+  
+      if (confirm(confirmationMessage)) {
+        // Aquí puedes realizar las acciones necesarias para guardar los ajustes
+        alert('Ajustes guardados correctamente');
+      }
+    }
+  </script>
+  
+  
+  
+   
+
+  <%- include('pantalla/footer'); %>
+  
+  
+  
+  
+  
+  

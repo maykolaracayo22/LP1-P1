@@ -1,0 +1,130 @@
+<%- include('pantalla/header'); %>
+<style>
+  .section-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .section-description {
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .card-container {
+    display: inline-block;
+    width: calc(50% - 20px);
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: #4c51bf;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+  }
+
+  .card-button:hover {
+    background-color: #434190;
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      width: 100%;
+    }
+  }
+
+  .background-container {
+    background-image: url("../images/image_3.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+  }
+
+</style>
+
+</style>
+
+<div class="background-container">
+<div class="section-container">
+  <h2 class="section-title">Mis Ofertas Laborales</h2>
+</div>
+
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5 ">
+  <!--Card 1-->
+  
+<a href="mioferta-edit" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="../images/person_6.jpg" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Noteworthy technology acquisitions 2021</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <button class="edit-button" >
+            <i class="fas fa-edit"></i>
+            Editar
+          </button>
+          
+    </div>
+</a>
+
+  <!--Card 2-->
+ 
+  <a href="mioferta-edit" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="../images/person_6.jpg" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Noteworthy technology acquisitions 2021</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        <button class="edit-button">
+            <i class="fas fa-edit"></i>
+            Editar
+          </button>
+    </div>
+</a>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+  <%- include('pantalla/footer'); %>

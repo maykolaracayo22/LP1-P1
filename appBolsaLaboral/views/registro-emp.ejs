@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../../docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Signin Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link href="../../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="../../docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../../docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="../../docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="../../docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="../../docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+    <!-- Custom styles for this template -->
+    <link href="sign-in.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <style>
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .form-icons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4c51bf;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+    }
+
+    .form-button:hover {
+      background-color: #434190;
+    }
+  </style>
+  </head>
+  
+  <body class="bg-gray-100 flex bg-local" style="background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/architect.svg')">
+
+    <br>
+    <br><br>
+    <br><br>
+    <br>
+    <h2 class="form-title">Registrar Empresa</h2>
+    <div class="form-container">
+      <div class="form-box">
+        <div class="form-section">
+          <label class="form-label" for="nombre">Nombre de la Empresa:</label>
+          <input class="form-input" type="text" id="nombre" name="nombre" required>
+          <label class="form-label" for="direccion">Dirección de la Empresa:</label>
+          <input class="form-input" type="text" id="direccion" name="direccion" required>
+          <label class="form-label" for="ruc">RUC:</label>
+          <input class="form-input" type="text" id="ruc" name="ruc" required>
+          <label class="form-label" for="celular">Celular:</label>
+          <input class="form-input" type="text" id="celular" name="celular" required>
+          <label class="form-label" for="imagen">Enlace de la Imagen de la Empresa:</label>
+          <input class="form-input" type="text" id="imagen" name="imagen" required>
+        </div>
+        <div class="form-section">
+          <label class="form-label" for="rubro">Rubro:</label>
+          <select class="form-select" id="rubro" name="rubro" required>
+            <option value="">Seleccionar</option>
+            <option value="1">Rubro 1</option>
+            <option value="2">Rubro 2</option>
+            <!-- Agrega más opciones de rubros aquí -->
+          </select>
+          <label class="form-label" for="correo">Correo:</label>
+          <input class="form-input" type="email" id="correo" name="correo" required>
+          <label class="form-label" for="ciudad">Ciudad:</label>
+          <select class="form-select" id="ciudad" name="ciudad" required>
+            <option value="">Seleccionar</option>
+            <option value="Lima">Lima</option>
+            <option value="Arequipa">Arequipa</option>
+            <option value="Trujillo">Trujillo</option>
+            <!-- Agrega más ciudades aquí -->
+          </select>
+          <label class="form-label" for="provincia">Provincia:</label>
+          <select class="form-select" id="provincia" name="provincia" required>
+            <option value="">Seleccionar</option>
+          </select>
+          <label class="form-label" for="distrito">Distrito:</label>
+          <select class="form-select" id="distrito" name="distrito" required>
+            <option value="">Seleccionar</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-icons">
+        <a href="/" class="form-button" onclick="borrarDatos()"><i class="fas fa-trash-alt"></i> Borrar</a>
+        <a href="/" class="form-button" onclick="guardarDatos()"><i class="fas fa-save"></i> Guardar</a>
+      </div>
+    </div>
+    
+    <style>
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    
+      .form-box {
+        display: flex;
+        justify-content: space-between;
+        width: 800px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    
+      .form-section {
+        flex: 1;
+        margin-right: 20px;
+      }
+    
+      .location-section {
+        margin-top: 20px;
+      }
+    
+      .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    
+      .form-input,
+      .form-select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+    
+      .form-icons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+    
+      .form-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        margin-left: 10px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var ciudades = {
+          "Lima": ["Lima", "Callao"],
+          "Arequipa": ["Arequipa", "Cayma"],
+          "Trujillo": ["Trujillo", "La Libertad"]
+          // Agrega más ciudades y sus provincias aquí
+        };
+    
+        var provincias = {
+          "Lima": ["Lima", "Callao"],
+          "Arequipa": ["Arequipa", "Cayma"],
+          "Trujillo": ["Trujillo", "La Libertad"]
+          // Agrega más provincias y sus distritos aquí
+        };
+    
+        var distritos = {
+          "Lima": ["Miraflores", "San Isidro", "Barranco"],
+          "Callao": ["Callao", "Bellavista", "La Perla"],
+          "Arequipa": ["Arequipa", "Cayma", "Yanahuara"],
+          "Cayma": ["Cayma", "Mariano Melgar", "Yanahuara"],
+          "Trujillo": ["Trujillo", "La Libertad", "Víctor Larco"]
+          // Agrega más distritos aquí
+        };
+    
+        var ciudadSelect = $("#ciudad");
+        var provinciaSelect = $("#provincia");
+        var distritoSelect = $("#distrito");
+    
+        // Cargar provincias al seleccionar una ciudad
+        ciudadSelect.change(function () {
+          var ciudad = $(this).val();
+          var provinciasOptions = provincias[ciudad].map(function (provincia) {
+            return $("<option>", {value: provincia, text: provincia});
+          });
+          provinciaSelect.html(provinciasOptions);
+          provinciaSelect.trigger("change");
+        });
+    
+        // Cargar distritos al seleccionar una provincia
+        provinciaSelect.change(function () {
+          var provincia = $(this).val();
+          var distritosOptions = distritos[provincia].map(function (distrito) {
+            return $("<option>", {value: distrito, text: distrito});
+          });
+          distritoSelect.html(distritosOptions);
+        });
+    
+        // Cargar ciudades al iniciar la página
+        var ciudadesOptions = Object.keys(ciudades).map(function (ciudad) {
+          return $("<option>", {value: ciudad, text: ciudad});
+        });
+        ciudadSelect.html(ciudadesOptions);
+        ciudadSelect.trigger("change");
+      });
+    
+      function borrarDatos() {
+        // Lógica para borrar los datos del formulario
+        alert("Borrando datos...");
+      }
+    
+      function guardarDatos() {
+        // Lógica para guardar los datos del formulario
+        alert("Guardando datos...");
+      }
+    </script>
+    
+
+   
+</body>
+</html>

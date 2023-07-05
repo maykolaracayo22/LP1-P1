@@ -1,0 +1,129 @@
+<%- include('pantalla/header'); %>
+ 
+<style>
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    .edit-form {
+      width: 400px;
+      background-color: #f2f2f2;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+  
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .edit-form label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  
+    .edit-form input[type="text"],
+    .edit-form select {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+  
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .delete-button,
+    .save-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #4c51bf;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .delete-button:hover,
+    .save-button:hover {
+      background-color: #434190;
+    }
+  
+    .delete-button i,
+    .save-button i {
+      margin-right: 5px;
+    }
+
+    .background-container {
+    background-image: url("../images/image_5.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+  }
+
+  </style>
+<div class="background-container">
+
+  <div class="form-container">
+    <div class="edit-form">
+      <h2 class="form-title">Editar Oferta</h2>
+      <form>
+        <label for="job-title">Nombre de la Oferta:</label>
+        <input type="text" id="job-title" name="job-title" required>
+  
+        <label for="salary">Salario:</label>
+        <input type="text" id="salary" name="salary" required>
+  
+        <label for="work-schedule">Jornada:</label>
+        <select id="work-schedule" name="work-schedule">
+          <option value="full-time">Tiempo completo</option>
+          <option value="part-time">Medio tiempo</option>
+          <option value="contract">Contrato</option>
+          <option value="freelance">Freelance</option>
+        </select>
+  
+        <label for="shift">Turno:</label>
+        <select id="shift" name="shift">
+          <option value="morning">Mañana</option>
+          <option value="afternoon">Tarde</option>
+          <option value="night">Noche</option>
+        </select>
+  
+        <label for="status">Estado:</label>
+        <select id="status" name="status">
+          <option value="open">Abierta</option>
+          <option value="closed">Cerrada</option>
+        </select>
+  
+        <div class="buttons-container">
+          <a href="#" class="delete-button">
+            <i class="fas fa-trash-alt"></i> Borrar
+          </a>
+          <a href="#" class="save-button">
+            <i class="fas fa-save"></i> Guardar
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+</div>
+  <%- include('pantalla/footer'); %>

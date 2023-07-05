@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bolsa</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+        body {
+      background-image: url("images/bg_2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Hace que la imagen de fondo sea estática */
+      /* Ajusta el tamaño de la imagen de fondo */
+      height: 100vh; /* Establece el alto de la imagen al 100% del viewport */
+      width: 100%; /* Establece el ancho de la imagen al 100% del viewport */
+    }
+  </style>
+
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+   <!-- Tailwind CSS -->
+   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+ 
+
+  </head>
+  <body>
+
+    <nav class="fixed w-full z-20 top-0 left-0  dark:border-gray-600" id="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+              <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                      <img class="block h-12 w-auto lg:hidden" src="images/logodecrucero.png" alt="Your Company">
+                      <img class="hidden h-12 w-auto lg:block" src="images/logodecrucero.png" alt="Your Company">
+                  </div>
+                  <div class="hidden md:block">
+                      <div class="ml-10 flex items-baseline space-x-4">
+                          <a href="/" class="relative inline-block group">
+                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                  Inicio
+                              </span>
+                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                          </a>
+                          <a href="/empleos" class="relative inline-block group">
+                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                  Empleos
+                              </span>
+                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                          </a>
+                          <a href="/candidatos" class="relative inline-block group">
+                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                  Candidatos
+                              </span>
+                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                          </a>
+                          <a href="/info" class="relative inline-block group">
+                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                  Quienes Somos
+                              </span>
+                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                          </a>
+                          <a href="/contacto" class="relative inline-block group">
+                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                  Contacto
+                              </span>
+                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="hidden md:block">
+                  <div class="ml-4 flex items-center md:ml-6">
+                      <a href="admin/login" class="flex items-center justify-center px-4 py-2 space-x-2 bg-transparent hover:bg-gray-200 text-gray-800 rounded-md">
+                          <i class="fas fa-user-graduate"></i>
+                          <span>Egresado</span>
+                      </a>
+  
+                      <a href="/admin/logine" class="flex items-center justify-center px-4 py-2 space-x-2 bg-transparent hover:bg-gray-200 text-gray-800 rounded-md">
+                          <i class="fas fa-building"></i>
+                          <span>Empresa</span>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <style>
+        .menu {
+            display: none; /* El menú estará oculto por defecto */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .menu a {
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu a i {
+            margin-right: 8px;
+        }
+        
+        .icon-button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                position: static;
+                display: block;
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            .menu a {
+                margin-bottom: 0;
+                padding: 8px 16px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    </style>
+
+
+
+      <div x-show="open" x-on:click.away="open=false" class="sm:hidden" id="mobile-menu">
+        <button onclick="toggleMenu()" class="icon-button"><i class="fas fa-bars"></i></button>
+        <div id="menu" class="menu">
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#"><i class="fas fa-briefcase"></i> Empleos</a>
+            <a href="#"><i class="fas fa-users"></i> Candidatos</a>
+            <a href="#"><i class="fas fa-info-circle"></i> Quienes somos</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            <a href="#"><i class="fas fa-sign-in-alt"></i> Iniciar sesión como egresado</a>
+            <a href="#"><i class="fas fa-building"></i> Iniciar sesión como empresa</a>
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "none") {
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none";
+                }
+            }
+    
+        </script>
+      </div>
+  </nav>
+  
+
+
+<script>
+  // Script para cambiar la apariencia de la barra de navegación al desplazarse
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 0) {
+      navbar.classList.add('bg-white');
+    } else {
+      navbar.classList.remove('bg-white');
+    }
+  });
+</script>
+
+

@@ -1,0 +1,48 @@
+<%- include('partials/header'); %>
+    <h2 class="bg-sky-800 text-white text-center py-4 text-xl my-4">MIS POSTULACIONES</h2>
+    <style>
+        .custom-shadow {
+          box-shadow: 0 4px 10px rgba(100, 166, 232, 0.6);
+        }
+    
+        .custom-shadow:hover {
+          box-shadow: 0 4px 6px rgba(123, 181, 238, 0.5);
+        }
+      </style>
+    <div class="content-wrapper ">
+        <div >
+                <div class="custom-shadow border-indigo-100 border-3 rounded-md m-6" style="width: 800px; float: left;">
+                    <!-- El primer div ocupa más espacio con width: 70%; y se coloca a la izquierda con float: left; -->
+                    <div>
+                        <img class="rounded-t-md" src="../images/pos-1.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-center  text-lg">Todavía no te has postulado en ninguna oferta
+                        </h3>
+                        <p class="m-4 text-center ">En esta sección podrás ver todas tus postulaciones y seguir el estado de los procesos de selección en todo momento.
+                        </p>
+                    </div>
+                    <div class="m-4 text-center ">
+                        <a class="bg-sky-800 text-white py-2 px-8 rounded-lg hover:bg-indigo-400" href="egresado-ol">Ver Ofertas Laborales</a>
+                    </div>
+                </div>
+
+        </div>
+
+        <div>
+            
+            <div class="custom-shadow border-indigo-100 border-3 rounded-md m-6" style="width: 370px; float: right;">
+                <!-- El segundo div ocupa menos espacio con width: 30%; y se coloca a la derecha con float: right; -->
+                <div>
+                    <img class="rounded-t-md" src="../images/pos-2.png" alt="">
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <%- include('partials/footer'); %>
