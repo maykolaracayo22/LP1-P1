@@ -1,235 +1,107 @@
 <%- include('pantalla_empresa/header'); %>
 <style>
-  .section-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
+  .custom-shadow {
+    box-shadow: 0 4px 10px rgba(100, 166, 232, 0.6);
   }
 
-  .section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  .custom-shadow:hover {
+    box-shadow: 0 4px 6px rgba(123, 181, 238, 0.5);
   }
-
-  .section-description {
-    font-size: 18px;
-    margin-top: 0;
-  }
-
-  .card-container {
-    display: inline-block;
-    width: calc(50% - 20px);
-    margin: 10px;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .card-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .card-description {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .card-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .card-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    background-color: #4c51bf;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease;
-    margin: 5px;
-  }
-
-  .card-button:hover {
-    background-color: #434190;
-  }
-
-  @media (max-width: 768px) {
-    .card-container {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
-    }
-    
-    .carousel-inner .carousel-item-left.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
-    }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
-}
-
 </style>
 
-<div class="section-container">
-  <h2 class="section-title">Ofertas Laborales</h2>
-  <p class="section-description">¡Descubre nuestras últimas oportunidades laborales y encuentra el trabajo de tus sueños! Trabajamos con empresas líderes en diversos sectores para brindarte las mejores opciones de empleo. ¡No pierdas esta oportunidad!</p>
-</div>
+<h2 class="bg-sky-800 text-white text-center py-4 text-xl my-4">OFERTAS LABORALES</h2>
 
 
+<div class="content-wrapper ">
 
-<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
-  <!--Card 1-->
-  <div class=" w-full lg:max-w-full lg:flex">
-    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
-    </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <div class="mb-8">
-        <p class="text-sm text-gray-600 flex items-center">
-          <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-          </svg>
-          Members only
-        </p>
-        <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="flex items-center">
-        <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-        <div class="text-sm">
-          <p class="text-gray-900 leading-none">John Smith</p>
-          <p class="text-gray-600">Aug 18</p>
-        </div>
-        
-      </div>
-      <BR></BR>
-      <DIv>
-        <a href="empresa-ver" class="card-button"><i class="fas fa-eye"></i> Ver</a>
-       
-      </DIv>
+    <div class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-2">
 
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md " src="../images/ol-2.png" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg  ">Programación y desarrollo de software:</h3>
+          <p class="m-4 text-center"> Es importante tener experiencia en lenguajes de programación como Java, Python,
+            C++, y ser capaz de desarrollar y mantener aplicaciones y sistemas.</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="oferta-egresado-1">Ver Info</a>
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="egresado-apli">Aplicar</a>
+        </div>
       </div>
-</div>
-  <!--Card 2-->
-  <div class=" w-full lg:max-w-full lg:flex">
-      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md " src="../images/ol-1.png" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Sistemas operativos y redes:</h3>
+          <p class="m-4 text-center">Conocimientos en sistemas operativos como Windows, Linux o Unix, así como en
+            redes de computadoras, protocolos de comunicación y seguridad informática.</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="">Ver Info</a>
+        </div>
       </div>
-      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-        <div class="mb-8">
-          <p class="text-sm text-gray-600 flex items-center">
-            <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-              <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-            </svg>
-            Members only
-          </p>
-          <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-          <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md " src="../images/ol-3.png" alt="">
         </div>
-        <div class="flex items-center">
-          <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-          <div class="text-sm">
-            <p class="text-gray-900 leading-none">John Smith</p>
-            <p class="text-gray-600">Aug 18</p>
-          </div>
-          
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Base de datos:</h3>
+          <p class="m-4 text-center">Familiaridad con sistemas de gestión de bases de datos (por ejemplo, MySQL,
+            Oracle, MongoDB)
+            y habilidades en diseño, administración y optimización de bases de datos.</p>
         </div>
-        <BR></BR>
-        <DIv>
-          <a href="empresa-ver" class="card-button"><i class="fas fa-eye"></i> Ver</a>
-        </DIv>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="">Ver Info</a>
         </div>
+      </div>
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md" src="../images/ol-4.png" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Arquitectura de sistemas:</h3>
+          <p class="m-4 text-center">Capacidad para diseñar y desarrollar la arquitectura de sistemas informáticos,
+            incluyendo
+            la integración de diferentes componentes y tecnologías.</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="">Ver Info</a>
+        </div>
+      </div>
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md" src="../images/ol-7.png" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Ingeniero(a) de Soporte</h3>
+          <p class="m-4 text-center">Tecnología, información e internet - Jornada completa - Tecnología de la
+            información</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="">Ver Info</a>
+        </div>
+      </div>
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
+        <div>
+          <img class="rounded-t-md" src="../images/ol-5.png" alt="">
+        </div>
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Practicante de Sistemas</h3>
+          <p class="m-4 text-center">Instituto Apoyo</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="">Ver Info</a>
+        </div>
+      </div>
   </div>
-  <!--Card 3-->
-  <div class=" w-full lg:max-w-full lg:flex">
-    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
-    </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <div class="mb-8">
-        <p class="text-sm text-gray-600 flex items-center">
-          <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-          </svg>
-          Members only
-        </p>
-        <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="flex items-center">
-        <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-        <div class="text-sm">
-          <p class="text-gray-900 leading-none">John Smith</p>
-          <p class="text-gray-600">Aug 18</p>
-        </div>
-        
-      </div>
-      <BR></BR>
-      <DIv>
-        <a href="empresa-ver" class="card-button"><i class="fas fa-eye"></i> Ver</a>
-       
-      </DIv>
-      </div>
 </div>
-
-</div>
-</div>
-
-<script>
-$('#recipeCarousel').carousel({
-  interval: 10000
-})
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-</script>
 
   <%- include('pantalla_empresa/footer'); %>
