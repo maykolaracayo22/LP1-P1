@@ -26,12 +26,55 @@ router.get('/egresado-pos', function(req, res, next) {
 });
 /* FIN COPIA*/
 
+/* ADMIN */
+
+router.get('/admin', function (req, res, next) {
+    dbConn.query('SELECT * FROM usuarios ORDER BY id desc', function (err, rows) {
+      if (err) {
+        req.flash('error', err);
+        res.render('admin/admin', { data: '' }); 
+      } else {
+        res.render('admin/admin', { data: rows });
+      }
+    });
+  });
+  
+
+router.get('/admin-add', function (req, res, next) {
+    res.render('admin/admin-add');
+});
+
+router.post('/admin-add', function (req, res, next) {
+    let email = req.body.email;
+    let password = req.body.password;
+    let rol = req.body.rol;
+
+    //console.log(nombre);
+
+    var form_data = {
+        email: email,
+        password: password,
+        rol: rol
+    }
+    dbConn.query('INSERT INTO usuarios SET ?', form_data, function (err, result) {
+        if (err) {
+            req.flash('error', err);
+        } else {
+            req.flash('success', 'Usuario registrado satisfactoriamente');
+            res.redirect('../admin/admin');
+        }
+    })
+
+});
+
+
 
 /* EMPRESA */
 
 router.get('/empresa-ver', function(req, res, next) {
     res.render('admin/empresa-ver');
 });
+
 
 /* CATEGORIAS */
 
@@ -126,6 +169,10 @@ router.get('/oferta', function(req, res, next) {
     res.render('admin/oferta');
 });
 
+router.get('/perfil', function(req, res, next) {
+    res.render('admin/perfil');
+});
+
 router.get('/mioferta', function(req, res, next) {
     res.render('admin/mioferta');
 });
@@ -138,10 +185,15 @@ router.get('/descripcion', function(req, res, next) {
 router.get('/ajustes', function(req, res, next) {
     res.render('admin/ajustes');
 });
-
+// oferta 
 router.get('/mioferta-edit', function(req, res, next) {
     res.render('admin/mioferta-edit');
 });
+// oferta 
+router.get('/mioferta-postulantes', function(req, res, next) {
+    res.render('admin/mioferta-postulantes');
+});
+
 
 router.get('/empresa-ver', function(req, res, next) {
     res.render('admin/empresa-ver');

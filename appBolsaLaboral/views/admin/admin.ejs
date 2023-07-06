@@ -1,0 +1,84 @@
+<%- include('pantalla_admin/header'); %>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Usuarios Registrados</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            </ol>
+          </div>
+        </div>
+        <% if (messages.success) { %>
+          <div class="alert alert-success" role="alert"><%- messages.success %></div>
+        <% } %>
+        <% if (messages.error) { %>
+          <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+        <% } %>      
+        <div class="text-right">
+          <a href="admin-add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Usuario</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Usuarios</h3>
+              </div>
+                       <!-- /.card-header -->
+                <div class="card-body p-0">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">Id</th>
+                          <th>Email</th>
+                          <th>Password</th>
+                          <th>Rol</th>
+                          <th class="text-right" colspan="3">Opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% for(var i = 0; i< data.length; i++) { %>
+                          <tr>
+                            <td><%= (i+1) %></td>
+                            <td><%= data[i].email %></td>
+                            <td><%= data[i].password %></td>
+                            <td><%= data[i].rol %></td>
+
+                            <td class="text-right">
+                            
+                              <!-- PARA ELIMINAR Y EDITAR -->
+                              <!-- Redideccionamos a productos-edit -->
+                              <a href="productos-edit/<%=data[i].id%>" class="btn btn-info"><i
+                                  class="fas fa-edit"></i></a>
+                              <a href="productos-del/<%=data[i].id%>"
+                                onclick="return alert('Estas Seguro que deseas Eliminar?')" class="btn btn-danger"><i
+                                  class="fas fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%- include('pantalla_admin/footer'); %>

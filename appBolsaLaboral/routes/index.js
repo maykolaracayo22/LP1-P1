@@ -26,12 +26,9 @@ router.post('/search', function(req, res, next) {
   });
 });
 
+
 router.get('/admin/login', function(req, res, next) {
   res.render('login');
-});
-
-router.get('/admin/logine', function(req, res, next) {
-  res.render('logine');
 });
 
 router.get('/candidatos', function(req, res, next) {
@@ -55,70 +52,79 @@ router.get('/registro-emp', function(req, res, next) {
 });
 
 
-router.post('/admin/login',function(req, res,next){
-  email=req.body.email;
-  password=req.body.password;
-  dbConn.query("SELECT * FROM users WHERE email='"+email+"' AND password='"+password+"'",function(err,rows)     {
-    if(err) {
-        //req.flash('error', err);  
-        console.log(err);
-    } else {
-        console.log(rows);
-        if(rows.length){
-          req.session.idu=rows[0]["id"];
-          req.session.user=rows[0]["fullname"];
-          req.session.email=rows[0]["email"];
-          req.session.admin=true;
-          res.redirect("/admin/dashboard");
-        }else{
-          //req.flash('success', 'El usuario no existe'); 
-          res.redirect("/");
-        }
-    }
-  }) 
-});
+router.post('/admin/login', function(req, res, next) {
+  email = req.body.email;
+  password = req.body.password;
 
-router.post('/admin/logine',function(req, res,next){
-  email=req.body.email;
-  password=req.body.password;
-  dbConn.query("SELECT * FROM users WHERE email='"+email+"' AND password='"+password+"'",function(err,rows)     {
-    if(err) {
-        //req.flash('error', err);  
-        console.log(err);
-    } else {
-        console.log(rows);
-        if(rows.length){
-          req.session.idu=rows[0]["id"];
-          req.session.user=rows[0]["fullname"];
-          req.session.email=rows[0]["email"];
-          req.session.admin=true;
-          res.redirect("/admin/dashboarde");
-        }else{
-          //req.flash('success', 'El usuario no existe'); 
-          res.redirect("/");
-        }
-    }
-  }) 
+ dbConn.query("SELECT * FROM usuarios WHERE email = ? AND password = ?", [email, password], function(err, rows) {
+   if (err) {
+     console.log(err);
+   } else {
+     console.log(rows);
+     if (rows.length) {
+       req.session.idu = rows[0].id;
+       req.session.user = rows[0].email;
+       req.session.email = rows[0].password;
+       req.session.rol = rows[0].rol;
+
+       switch (rows[0].rol) {
+         case "1":
+           res.redirect("/admin/dashboard_admin");
+           break;
+         case "2":
+           res.redirect("/admin/dashboard_emp");
+           break;
+         case "3":
+           res.redirect("/admin/dashboard_egs");
+           break;
+         case "4":
+           res.redirect("/admin/dashboard_doc");
+           break;
+         default:
+           res.redirect("/");
+       }
+     } else {
+       res.redirect("/");
+     }
+   }
+ });
 });
 
 
-router.get('/admin/dashboard', function(req, res, next) {
-  if(req.session.admin){
-    res.render('admin/index');
-  }
-  else{
-    res.redirect("login");
+router.get('/admin/dashboard_admin', function(req, res, next) {
+  if (req.session.rol === "1") {
+    res.render('admin/index_admin');
+  } else {
+    res.redirect("/admin/login");
   }
 });
 
-router.get('/admin/dashboarde', function(req, res, next) {
-  if(req.session.admin){
-    res.render('admin/empresa');
-  }
-  else{
-    res.redirect("logine");
-  }
+router.get('/admin/dashboard_emp', function(req, res, next) {
+ if (req.session.rol === "2") {
+   res.render('admin/empresa');
+ } else {
+   res.redirect("login");
+ }
 });
+
+router.get('/admin/dashboard_egs', function(req, res, next) {
+ if (req.session.rol === "3") {
+   res.render('admin/egresado');
+ } else {
+   res.redirect("login");
+ }
+});
+
+router.get('/admin/dashboard_doc', function(req, res, next) {
+ if (req.session.rol === "4") {
+   res.render('admin/index_doc');
+ } else {
+   res.redirect("login");
+ }
+});
+
+
+
 
 
 

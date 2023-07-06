@@ -1,0 +1,42 @@
+<%- include('pantalla_admin/header'); %>
+
+<section class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Datos de la categoría</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form action="admin-add" method="POST">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input name="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input name="password" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Rols</label>
+                <input name="rol" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Registar</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+  <%- include('pantalla_admin/footer'); %>
