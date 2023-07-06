@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>bolsa</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
     <script src="https://cdn.tailwindcss.com/3.3.0"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <style>
         body {
       background-image: url("images/bg_2.jpg");
       background-size: cover;
@@ -26,668 +27,707 @@
     }
   </style> -->
 
-   <!-- Required meta tags -->
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-   <!-- Tailwind CSS -->
-   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
- 
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  </head>
-  <body>
+
+
+</head>
+
+<body>
 
     <nav class="fixed w-full z-20 top-0 left-0  dark:border-gray-600" id="navbar">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-16">
-              <div class="flex items-center">
-                  <div class="flex-shrink-0">
-                      <img class="block h-12 w-auto lg:hidden" src="images/logodecrucero.png" alt="Your Company">
-                      <img class="hidden h-12 w-auto lg:block" src="images/logodecrucero.png" alt="Your Company">
-                  </div>
-                  <div class="hidden md:block">
-                      <div class="ml-10 flex items-baseline space-x-4">
-                          <a href="/" class="relative inline-block group">
-                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
-                                  Inicio
-                              </span>
-                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
-                          </a>
-                          <a href="/empleos" class="relative inline-block group">
-                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
-                                  Empleos
-                              </span>
-                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
-                          </a>
-                          <a href="/candidatos" class="relative inline-block group">
-                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
-                                  Candidatos
-                              </span>
-                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
-                          </a>
-                          <a href="/info" class="relative inline-block group">
-                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
-                                  Quienes Somos
-                              </span>
-                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
-                          </a>
-                          <a href="/contacto" class="relative inline-block group">
-                              <span class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
-                                  Contacto
-                              </span>
-                              <span class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="hidden md:block">
-                  <div class="ml-4 flex items-center md:ml-6">
-                      <a href="admin/login" class="flex items-center justify-center px-4 py-2 space-x-2 bg-transparent hover:bg-gray-200 text-gray-800 rounded-md">
-                        <i class="fa-solid fa-users-rectangle"></i>
-                          <span>Iniciar Sesion</span>
-                      </a>
-  
-                    
-                  </div>
-              </div>
-          </div>
-      </div>
-      <style>
-        .menu {
-            display: none; /* El menú estará oculto por defecto */
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="block h-12 w-auto lg:hidden" src="images/logodecrucero.png" alt="Your Company">
+                        <img class="hidden h-12 w-auto lg:block" src="images/logodecrucero.png" alt="Your Company">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="/" class="relative inline-block group">
+                                <span
+                                    class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                    Inicio
+                                </span>
+                                <span
+                                    class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                            </a>
+                            <a href="/empleos" class="relative inline-block group">
+                                <span
+                                    class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                    Empleos
+                                </span>
+                                <span
+                                    class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                            </a>
+                            <a href="/candidatos" class="relative inline-block group">
+                                <span
+                                    class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                    Candidatos
+                                </span>
+                                <span
+                                    class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                            </a>
+                            <a href="/info" class="relative inline-block group">
+                                <span
+                                    class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                    Quienes Somos
+                                </span>
+                                <span
+                                    class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                            </a>
+                            <a href="/contacto" class="relative inline-block group">
+                                <span
+                                    class="inline-block transition-colors duration-300 ease-in-out group-hover:text-blue-500 text-xl font-semibold tracking-wide text-gray-800 uppercase">
+                                    Contacto
+                                </span>
+                                <span
+                                    class="absolute left-0 bottom-0 w-full h-0 border-b-2 border-black transition-all duration-300 ease-in-out group-hover:h-2 group-hover:scale-x-100 scale-x-0 origin-left"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        .menu a {
-            display: block;
-            margin-bottom: 8px;
-            text-decoration: none;
-            color: #333;
-        }
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <a href="admin/login"
+                            class="flex items-center justify-center px-4 py-2 space-x-2 bg-transparent hover:bg-gray-200 text-gray-800 rounded-md">
+                            <i class="fa-solid fa-users-rectangle"></i>
+                            <span>Iniciar Sesion</span>
+                        </a>
 
-        .menu a i {
-            margin-right: 8px;
-        }
-        
-        .icon-button {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
 
-        @media (max-width: 480px) {
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
             .menu {
-                position: static;
-                display: block;
-                box-shadow: none;
-                padding: 0;
-                border-radius: 0;
+                display: none;
+                /* El menú estará oculto por defecto */
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                padding: 12px 16px;
+                z-index: 1;
+                border-radius: 4px;
+                font-size: 14px;
             }
 
             .menu a {
-                margin-bottom: 0;
-                padding: 8px 16px;
-                border-bottom: 1px solid #ccc;
+                display: block;
+                margin-bottom: 8px;
+                text-decoration: none;
+                color: #333;
             }
-        }
-    </style>
 
+            .menu a i {
+                margin-right: 8px;
+            }
 
+            .icon-button {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
 
-      <div x-show="open" x-on:click.away="open=false" class="sm:hidden" id="mobile-menu">
-        <button onclick="toggleMenu()" class="icon-button"><i class="fas fa-bars"></i></button>
-        <div id="menu" class="menu">
-            <a href="/"><i class="fas fa-home"></i> Inicio</a>
-            <a href="/empleos"><i class="fas fa-briefcase"></i> Empleos</a>
-            <a href="/candidatos"><i class="fas fa-users"></i> Candidatos</a>
-            <a href="/info"><i class="fas fa-info-circle"></i> Quienes somos</a>
-            <a href="/contacto"><i class="fas fa-envelope"></i> Contacto</a>
-            <a href="admin/login"><i class="fa-solid fa-users-rectangle"></i> Iniciar Sesión</a>
-        </div>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-        <script>
-            function toggleMenu() {
-                var menu = document.getElementById("menu");
-                if (menu.style.display === "none") {
-                    menu.style.display = "block";
-                } else {
-                    menu.style.display = "none";
+            @media (max-width: 480px) {
+                .menu {
+                    position: static;
+                    display: block;
+                    box-shadow: none;
+                    padding: 0;
+                    border-radius: 0;
+                }
+
+                .menu a {
+                    margin-bottom: 0;
+                    padding: 8px 16px;
+                    border-bottom: 1px solid #ccc;
                 }
             }
-    
-        </script>
-      </div>
-  </nav>
+        </style>
 
-  <section class="textos-header">
-    <h1>Bolsa Laboral de Crucero</h1>
-    <h2>Nuestros servicios a tu alcance</h2>
-</section>
-<div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-        style="height: 100%; width: 100%;">
-        <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: #fff;"></path>
-    </svg></div>
 
-  
-    
-        <header>
+
+        <div x-show="open" x-on:click.away="open=false" class="sm:hidden" id="mobile-menu">
+            <button onclick="toggleMenu()" class="icon-button"><i class="fas fa-bars"></i></button>
+            <div id="menu" class="menu">
+                <a href="/"><i class="fas fa-home"></i> Inicio</a>
+                <a href="/empleos"><i class="fas fa-briefcase"></i> Empleos</a>
+                <a href="/candidatos"><i class="fas fa-users"></i> Candidatos</a>
+                <a href="/info"><i class="fas fa-info-circle"></i> Quienes somos</a>
+                <a href="/contacto"><i class="fas fa-envelope"></i> Contacto</a>
+                <a href="admin/login"><i class="fa-solid fa-users-rectangle"></i> Iniciar Sesión</a>
+            </div>
+
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+            <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    if (menu.style.display === "none") {
+                        menu.style.display = "block";
+                    } else {
+                        menu.style.display = "none";
+                    }
+                }
+
+            </script>
+        </div>
+    </nav>
+
+    <section class="textos-header">
+        <h1>Bolsa Laboral de Crucero</h1>
+        <h2>Nuestros servicios a tu alcance</h2>
+    </section>
+
+    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke: none; fill: #fff;"></path>
+        </svg></div>
+
+
+
+    <header>
+
+        <section class="textos-header">
+            <h1>Bolsa Laboral de Crucero</h1>
+            <h2>Nuestros servicios a tu alcance</h2>
             
-            <section class="textos-header">
-                <h1>Bolsa Laboral de Crucero</h1>
-                <h2>Nuestros servicios a tu alcance</h2>
-            </section>
-            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                    style="height: 100%; width: 100%;">
-                    <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                        style="stroke: none; fill: #fff;"></path>
-                </svg></div>
-        </header>
+            
 
-<script>
-  // Script para cambiar la apariencia de la barra de navegación al desplazarse
-  window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 0) {
-      navbar.classList.add('bg-white');
-    } else {
-      navbar.classList.remove('bg-white');
-    }
-  });
-</script>
+                <div>
+                  <button @click="open=! open" type="button"
+                    class="rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span class="sr-only">Open user menu</span>
+                    <a class="bg-indigo-600 text-white py-2.5 px-6 rounded-full hover:bg-indigo-400 "
+                      href="admin/crear_cuenta_egs">Crear Cuenta Egresado</a>
 
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-  
-  body {
-      font-family: 'open sans';
-  }
-  
-  .contenedor {
-      padding: 60px 0;
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      overflow: hidden;
-  }
-  
-  .titulo {
-      color: #642a73;
-      font-size: 30px;
-      text-align: center;
-      margin-bottom: 60px;
-  }
-  
-  /* Header */
-  
-  header {
-      width: 100%;
-      height: 600px;
-      background: #bc4e9c;
-      /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, hsla(202, 95%, 37%, 0.459), hsla(214, 56%, 59%, 0.664)), url(../img/portada.jpg);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, hsla(191, 97%, 34%, 0.459), hsla(272, 45%, 52%, 0.664)), url(../img/portada.jpg);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background-size: cover;
-      background-attachment: fixed;
-      position: relative;
-  }
-  
-  nav{
-      text-align: right;
-      padding: 30px 50px 0 0;
-  }
-  
-  nav > a{
-      color:#fff;
-      font-weight: 300;
-      text-decoration: none;
-      margin-right: 10px;
-  }
-  
-  nav > a:hover{
-      text-decoration: underline;
-  }
-  
-  header .textos-header{
-      display: flex;
-      height: 430px;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-  }
-  
-  .textos-header h1{
-      font-size: 50px;
-      color:#fff;
-  }
-  
-  .textos-header h2{
-      font-size: 30px;
-      font-weight: 300;
-      color:#fff;
-  }
-  
-  .wave{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-  }
-  
-  /* About us */
-  
-  main .sobre-nosotros{
-      padding: 30px 0 60px 0;
-  }
-  .contenedor-sobre-nosotros{
-      display: flex;
-      justify-content: space-evenly;
-  }
-  
-  .imagen-about-us{
-      width: 48%;
-  }
-  
-  .sobre-nosotros .contenido-textos{
-      width: 48%;
-  }
-  
-  .contenido-textos h3{
-      margin-bottom: 15px;
-  }
-  
-  .contenido-textos h3 span{
-      background: #4d0686;
-      color: #fff;
-      border-radius: 50%;
-      display: inline-block;
-      text-align: center;
-      width: 30px;
-      height: 30px;
-      padding: 2px;
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-      margin-right: 5px;
-  }
-  
-  .contenido-textos p{
-      padding: 0px 0px 30px 15px;
-      font-weight: 300;
-      text-align: justify;
-  }
-  
-  /* Galeria */
-  
-  
-  .portafolio{
-      background: #f2f2f2;
-  }
-  
-  .galeria-port{
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-  }
-  
-  .imagen-port{
-      width: 24%;
-      margin-bottom: 10px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-  }
-  
-  .imagen-port > img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-  }
-  
-  .hover-galeria{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      transform: scale(0);
-      background: hsla(273,91%,27%, 0.7);
-      transition: transform .5s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-  }
-  
-  .hover-galeria img{
-      width: 50px;
-  }
-  
-  .hover-galeria p{
-      color: #fff;
-  }
-  
-  .imagen-port:hover .hover-galeria{
-      transform: scale(1);
-  }
-  
-  /* Clients */
-  
-  .cards{
-      display: flex;
-      justify-content: space-evenly;
-  }
-  
-  .cards .card{
-      background: #4d0686;
-      display: flex;
-      width: 46%;
-      height: 200px;
-      align-items: center;
-      justify-content: space-evenly;
-      border-radius: 5px;
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
-  }
-  
-  .cards .card img{
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border: 3px solid #fff;
-      border-radius: 50%;
-      display: block;
-  }
-  
-  .cards .card > .contenido-texto-card{
-      width: 60%;
-      color: #fff;
-  }
-  
-  .cards .card > .contenido-texto-card p{
-      font-weight: 300;
-      padding-top: 5px;
-  }
-  
-  /*  Our team */
-  
-  .about-services{
-      background: #f2f2f2;
-      padding-bottom: 30px;
-  }
-  
-  
-  .servicio-cont{
-      display:flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-  
-  .servicio-ind{
-      width: 28%;
-      text-align: center;
-  }
-  
-  .servicio-ind img{
-      width: 90%;
-  }
-  
-  .servicio-ind h3{
-      margin: 10px 0;
-  }
-  
-  .servicio-ind p{
-      font-weight: 300;
-      text-align: justify;
-  }
-  
-  /* footer */
-  
-  footer{
-      background: #414141;
-      padding: 60px 0 30px 0;
-      margin: auto;
-      overflow: hidden;
-  }
-  
-  .contenedor-footer{
-      display: flex;
-      width: 90%;
-      justify-content: space-evenly;
-      margin: auto;
-      padding-bottom: 50px;
-      border-bottom: 1px solid #ccc;
-  }
-  
-  .content-foo{
-      text-align: center;
-  }
-  
-  .content-foo h4{
-      color: #fff;
-      border-bottom: 3px solid #af20d3;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-  }
-  
-  .content-foo p{
-      color: #ccc;
-  }
-  
-  .titulo-final{
-      text-align: center;
-      font-size: 24px;
-      margin: 20px 0 0 0;
-      color: #9e9797;
-  }
-  
-  @media screen and (max-width:900px){
-      header{
-          background-position: center;
-      }
-  
-      .contenedor-sobre-nosotros{
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-      }
-  
-      .sobre-nosotros .contenido-textos{
-          width: 90%;
-      }
-  
-      .imagen-about-us{
-          width: 90%;
-      }
-  
-      /* Galeria */
-  
-      .imagen-port{
-          width: 44%;
-      }
-  
-      /* Clientes */
-  
-      .cards{
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-      }
-  
-      .cards .card{
-          width: 90%;
-      }
-  
-      .cards .card:first-child{
-          margin-bottom: 30px;
-      }
-  
-      /* servicios */
-  
-      .servicio-cont{
-          justify-content: center;
-          flex-direction: column;
-      }
-  
-      .servicio-ind{
-          width: 100%;
-          text-align: center;
-      }
-  
-      .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
-          margin-bottom: 60px;
-      }
-  
-      .servicio-ind img{
-          width: 90%;
-      }
-  }
-  
-  @media screen and (max-width:500px){
-      nav{
-          text-align: center;
-          padding: 30px 0 0 0;
-      }
-  
-      nav > a{
-          margin-right: 5px;
-      }
-  
-      .textos-header h1{
-          font-size: 35px;
-      }
-  
-      .textos-header h2{
-          font-size: 20px;
-      }
-  
-      /* ABOUT US */
-  
-      .imagen-about-us{
-          margin-bottom: 60px;
-          width: 99%;
-      }
-  
-      .sobre-nosotros .contenido-textos{
-          width: 95%;
-      }
-  
-      /* Galeria */
-  
-      .imagen-port{
-          width: 95%;
-      }
-  
-      /* Clients */
-  
-      .cards .card{
-          height: 450px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-  
-      .cards .card img{
-          width: 90px;
-          height: 90px;
-      }
-  
-      /* Footer */
-  
-      .contenedor-footer{
-          flex-direction: column;
-          border: none;
-      }
-  
-      .content-foo{
-          margin-bottom: 20px;
-          text-align: center;
-      }
-  
-      .content-foo h4{
-          border: none;
-      }
-  
-      .content-foo p{
-          color: #ccc;
-          border-bottom: 1px solid #f2f2f2;
-          padding-bottom: 20px;
-      }
-  
-      .titulo-final{
-          font-size: 20px;
-      }
-  }
-    .registration-process {
-    display: flex;
-    align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #333;
-    margin: 0 20px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  }
-  
-  .step:hover {
-    background-color: #ebebeb;
-  }
-  
-  .step-icon {
-    font-size: 30px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .step-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .step-description {
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  .arrow {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-  }
-  
-  .arrow i {
-    font-size: 24px;
-    color: #888;
-  }
-  
-  
-  </style>
+                      <button @click="open=! open" type="button"
+                      class="rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <span class="sr-only">Open user menu</span>
+                      <a class="bg-indigo-600 text-white py-2.5 px-6 rounded-full hover:bg-indigo-400 "
+                        href="admin/crear_cuenta_emp">Crear Cuenta Empresa</a>
+                    </button>
 
 
+                  </button>
+                </div>
+
+                
+
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+
+    <script>
+        // Script para cambiar la apariencia de la barra de navegación al desplazarse
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('bg-white');
+            }
+        });
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'open sans';
+        }
+
+        .contenedor {
+            padding: 60px 0;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .titulo {
+            color: #642a73;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Header */
+
+        header {
+            width: 100%;
+            height: 600px;
+            background: #bc4e9c;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, hsla(202, 95%, 37%, 0.459), hsla(214, 56%, 59%, 0.664)), url(../img/portada.jpg);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, hsla(191, 97%, 34%, 0.459), hsla(272, 45%, 52%, 0.664)), url(../img/portada.jpg);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        nav {
+            text-align: right;
+            padding: 30px 50px 0 0;
+        }
+
+        nav>a {
+            color: #fff;
+            font-weight: 300;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        nav>a:hover {
+            text-decoration: underline;
+        }
+
+        header .textos-header {
+            display: flex;
+            height: 430px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .textos-header h1 {
+            font-size: 50px;
+            color: #fff;
+        }
+
+        .textos-header h2 {
+            font-size: 30px;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* About us */
+
+        main .sobre-nosotros {
+            padding: 30px 0 60px 0;
+        }
+
+        .contenedor-sobre-nosotros {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .imagen-about-us {
+            width: 48%;
+        }
+
+        .sobre-nosotros .contenido-textos {
+            width: 48%;
+        }
+
+        .contenido-textos h3 {
+            margin-bottom: 15px;
+        }
+
+        .contenido-textos h3 span {
+            background: #4d0686;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            padding: 2px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+            margin-right: 5px;
+        }
+
+        .contenido-textos p {
+            padding: 0px 0px 30px 15px;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* Galeria */
+
+
+        .portafolio {
+            background: #f2f2f2;
+        }
+
+        .galeria-port {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .imagen-port {
+            width: 24%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+        }
+
+        .imagen-port>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hover-galeria {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            transform: scale(0);
+            background: hsla(273, 91%, 27%, 0.7);
+            transition: transform .5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hover-galeria img {
+            width: 50px;
+        }
+
+        .hover-galeria p {
+            color: #fff;
+        }
+
+        .imagen-port:hover .hover-galeria {
+            transform: scale(1);
+        }
+
+        /* Clients */
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .cards .card {
+            background: #4d0686;
+            display: flex;
+            width: 46%;
+            height: 200px;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 5px;
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        .cards .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .cards .card>.contenido-texto-card {
+            width: 60%;
+            color: #fff;
+        }
+
+        .cards .card>.contenido-texto-card p {
+            font-weight: 300;
+            padding-top: 5px;
+        }
+
+        /*  Our team */
+
+        .about-services {
+            background: #f2f2f2;
+            padding-bottom: 30px;
+        }
+
+
+        .servicio-cont {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .servicio-ind {
+            width: 28%;
+            text-align: center;
+        }
+
+        .servicio-ind img {
+            width: 90%;
+        }
+
+        .servicio-ind h3 {
+            margin: 10px 0;
+        }
+
+        .servicio-ind p {
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* footer */
+
+        footer {
+            background: #414141;
+            padding: 60px 0 30px 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .contenedor-footer {
+            display: flex;
+            width: 90%;
+            justify-content: space-evenly;
+            margin: auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .content-foo {
+            text-align: center;
+        }
+
+        .content-foo h4 {
+            color: #fff;
+            border-bottom: 3px solid #af20d3;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .content-foo p {
+            color: #ccc;
+        }
+
+        .titulo-final {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0 0 0;
+            color: #9e9797;
+        }
+
+        @media screen and (max-width:900px) {
+            header {
+                background-position: center;
+            }
+
+            .contenedor-sobre-nosotros {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sobre-nosotros .contenido-textos {
+                width: 90%;
+            }
+
+            .imagen-about-us {
+                width: 90%;
+            }
+
+            /* Galeria */
+
+            .imagen-port {
+                width: 44%;
+            }
+
+            /* Clientes */
+
+            .cards {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .cards .card {
+                width: 90%;
+            }
+
+            .cards .card:first-child {
+                margin-bottom: 30px;
+            }
+
+            /* servicios */
+
+            .servicio-cont {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .servicio-ind {
+                width: 100%;
+                text-align: center;
+            }
+
+            .servicio-ind:nth-child(1),
+            .servicio-ind:nth-child(2) {
+                margin-bottom: 60px;
+            }
+
+            .servicio-ind img {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            nav {
+                text-align: center;
+                padding: 30px 0 0 0;
+            }
+
+            nav>a {
+                margin-right: 5px;
+            }
+
+            .textos-header h1 {
+                font-size: 35px;
+            }
+
+            .textos-header h2 {
+                font-size: 20px;
+            }
+
+            /* ABOUT US */
+
+            .imagen-about-us {
+                margin-bottom: 60px;
+                width: 99%;
+            }
+
+            .sobre-nosotros .contenido-textos {
+                width: 95%;
+            }
+
+            /* Galeria */
+
+            .imagen-port {
+                width: 95%;
+            }
+
+            /* Clients */
+
+            .cards .card {
+                height: 450px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cards .card img {
+                width: 90px;
+                height: 90px;
+            }
+
+            /* Footer */
+
+            .contenedor-footer {
+                flex-direction: column;
+                border: none;
+            }
+
+            .content-foo {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .content-foo h4 {
+                border: none;
+            }
+
+            .content-foo p {
+                color: #ccc;
+                border-bottom: 1px solid #f2f2f2;
+                padding-bottom: 20px;
+            }
+
+            .titulo-final {
+                font-size: 20px;
+            }
+        }
+
+        .registration-process {
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            margin: 0 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .step:hover {
+            background-color: #ebebeb;
+        }
+
+        .step-icon {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .step-description {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .arrow i {
+            font-size: 24px;
+            color: #888;
+        }
+    </style>

@@ -10,12 +10,20 @@ router.get('/egresado-ol', function(req, res, next) {
     res.render('admin/egresado-ol');
 });
 
-router.get('/oferta-egresado-1', function(req, res, next) {
-    res.render('admin/oferta-egresado-1');
-});
+// router.get('/oferta-egresado-1', function(req, res, next) {
+//     res.render('admin/oferta-egresado-1');
+// });
 
 router.get('/egresado-apli', function(req, res, next) {
     res.render('admin/egresado-apli');
+});
+
+router.get('/perfil-empresa', function(req, res, next) {
+    res.render('admin/perfil-empresa');
+});
+
+router.get('/home', function(req, res, next) {
+    res.render('admin/home');
 });
 
 
