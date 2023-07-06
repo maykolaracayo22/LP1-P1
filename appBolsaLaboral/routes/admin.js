@@ -6,9 +6,7 @@ var dbConn  = require('../lib/db');
 
 /* EGRESADO */
 
-router.get('/egresado-ol', function(req, res, next) {
-    res.render('admin/egresado-ol');
-});
+
 
 // router.get('/oferta-egresado-1', function(req, res, next) {
 //     res.render('admin/oferta-egresado-1');
@@ -211,22 +209,28 @@ router.get('/empresa-ver', function(req, res, next) {
 
 /* DOCENTE */
 
-router.get('/monitoreo', function(req, res, next) {
-    res.render('admin/monitoreo');
-});
 
 router.get('/monitoreo', function(req, res, next) {
-    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc',function(err,rows)     {
- 
-        if(err) {
-            req.flash('error', err);
-            // render to views/books/index.ejs
-            res.render('admin/monitoreo',{data:''});   
-        } else {
-            res.render('admin/monitoreo',{data:rows});
-        }
-    });
+    dbConn.query('SELECT * FROM egresado ORDER BY egs_id desc',function(err,rows){
+      if(err) {
+          req.flash('error', err);
+          res.render('admin/monitoreo',{data:'[]'});   
+      }else {
+          res.render('admin/monitoreo',{data:rows});
+      }
+  });
+  });
 
+  /*Egresado ol*/
+  router.get('/egresado-ol', function(req, res, next) {
+    dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
+      if(err) {
+          req.flash('error', err);
+          res.render('admin/egresado-ol',{data:'[]'});   
+      }else {
+          res.render('admin/egresado-ol',{data:rows});
+      }
+  });
   });
 
 module.exports = router;
