@@ -22,6 +22,10 @@ router.get('/perfil-empresa', function(req, res, next) {
     res.render('admin/perfil-empresa');
 });
 
+router.get('/home', function(req, res, next) {
+    res.render('admin/home');
+});
+
 
 /* INICIO COPIA*/
 
