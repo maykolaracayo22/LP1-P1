@@ -199,4 +199,26 @@ router.get('/empresa-ver', function(req, res, next) {
     res.render('admin/empresa-ver');
 });
 
+
+
+/* DOCENTE */
+
+router.get('/monitoreo', function(req, res, next) {
+    res.render('admin/monitoreo');
+});
+
+router.get('/monitoreo', function(req, res, next) {
+    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc',function(err,rows)     {
+ 
+        if(err) {
+            req.flash('error', err);
+            // render to views/books/index.ejs
+            res.render('admin/monitoreo',{data:''});   
+        } else {
+            res.render('admin/monitoreo',{data:rows});
+        }
+    });
+
+  });
+
 module.exports = router;
