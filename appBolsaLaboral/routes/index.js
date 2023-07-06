@@ -101,7 +101,7 @@ router.get('/admin/dashboard_admin', function(req, res, next) {
 
 router.get('/admin/dashboard_emp', function(req, res, next) {
  if (req.session.rol === "2") {
-   res.render('admin/empresa');
+   res.render('admin/index_emp');
  } else {
    res.redirect("login");
  }
@@ -109,7 +109,7 @@ router.get('/admin/dashboard_emp', function(req, res, next) {
 
 router.get('/admin/dashboard_egs', function(req, res, next) {
  if (req.session.rol === "3") {
-   res.render('admin/egresado');
+   res.render('admin/index_egs');
  } else {
    res.redirect("login");
  }
