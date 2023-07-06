@@ -1,41 +1,56 @@
 <%- include('pantalla_docente/header'); %>
-<div class="container">
-    <div class="table-container">
-      <table class="table table-striped table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th>Nombre Estudiante</th>
-            <th>Apellido</th>
-            <th>DNI</th>
-            <th>Empresa</th>
-            <th>RUC</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Juan</td>
-            <td>Pérez</td>
-            <td>12345678</td>
-            <td>ABC</td>
-            <td>123456789</td>
-            <td>Activo</td>
-          </tr>
-          <tr>
-            <td>María</td>
-            <td>López</td>
-            <td>87654321</td>
-            <td>XYZ</td>
-            <td>987654321</td>
-            <td>Inactivo</td>
-          </tr>
-          <!-- Agrega más filas según tus necesidades -->
-        </tbody>
-      </table>
-    </div>
-  </div>
+<style>
+  .custom-shadow {
+    box-shadow: 0 4px 10px rgba(100, 166, 232, 0.6);
+  }
 
-  <!-- Scripts de Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  .custom-shadow:hover {
+    box-shadow: 0 4px 6px rgba(123, 181, 238, 0.5);
+  }
+</style>
+
+
+<div class="content-wrapper ">
+  <div class="">
+
+    <h2 class="bg-teal-400 text-white text-center py-4 text-xl mb-4 font-serif">INFORMACION DE DATOS</h2>
+    
+    </div>
+
+    <div class="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-4 mx-4">
+
+      <div class="custom-shadow border-blue-100 border-3 rounded-md m-1">
+        <div class="flex items-center justify-center">
+          <img class="rounded-t-md" src="../images/doc-2.png" alt="">
+        </div>
+        <div class="border-none">
+          <h3 class="text-center bg-sky-800 text-white text-lg ">Angel Rosendo Condori Coaquira</h3>
+          <p class="m-4 text-center">Desarrollador de soluciones empresariales tanto en Frontend como en Backend, con conocimientos en arquitecturas XAMMP y MEAN,
+            Magister en Ingeniería de sistemas con cursos de especialidad en Desarrollo web, Inteligencia artificial e Internet de las Cosas.
+            Docente de educación superior universitaria y tecnológica, invitado a diversas ponencias sobre temas de informática, desarrollo web, internet de las cosas y las nuevas tecnologías emergentes.</p>
+        </div>
+       
+      </div>
+
+
+
+
+      <div class="custom-shadow border-indigo-100 border-3 rounded-md ">
+        
+        <div>
+          <h3 class="text-center bg-sky-800 text-white text-lg px-4 py-4 font-serif">Encargado de ver postulantes</h3>
+          <p class="m-4 text-center">En general, los docentes pueden revisar las solicitudes o postulaciones de los estudiantes para evaluar su elegibilidad o aptitud para un programa o posición en particular. Esto puede implicar revisar el expediente académico, cartas de recomendación, ensayos personales, entrevistas, pruebas de aptitud o cualquier otro requisito establecido para el proceso de selección.</p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="monitoreo">MONITOREO</a>
+        </div>
+      </div>
+
+     
+
+    
+    </div>
+</div>
+
 
   <%- include('pantalla_docente/footer'); %>
