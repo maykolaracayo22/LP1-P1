@@ -31,7 +31,6 @@ router.get('/admin/login', function(req, res, next) {
   res.render('login');
 });
 
-
 router.get('/admin/crear_cuenta_egs', function(req, res, next) {
   res.render('crear_cuenta_egs');
 });
@@ -126,9 +125,6 @@ router.get('/admin/dashboard_doc', function(req, res, next) {
    res.redirect("login");
  }
 });
-
-
-
 
 
 
