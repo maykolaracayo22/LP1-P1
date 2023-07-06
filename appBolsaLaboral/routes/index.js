@@ -31,6 +31,15 @@ router.get('/admin/login', function(req, res, next) {
   res.render('login');
 });
 
+
+router.get('/admin/crear_cuenta_egs', function(req, res, next) {
+  res.render('crear_cuenta_egs');
+});
+
+router.get('/admin/crear_cuenta_emp', function(req, res, next) {
+  res.render('crear_cuenta_emp');
+});
+
 router.get('/candidatos', function(req, res, next) {
   res.render('candidatos');
 });
