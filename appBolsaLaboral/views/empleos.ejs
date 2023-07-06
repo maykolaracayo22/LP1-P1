@@ -81,6 +81,52 @@
     </div>
     
 
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96 bg-gradient-to-r from-transparent to-transparent">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+           
+          </div>
+        </div>
+        <div class="absolute left-0 bottom-0 mb-4 ml-4">
+          <h1 class="mb-4 text-6xl font-serif font-bold leading-none tracking-tight text-transparent bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text">EMPLEOS</h1>
+        </div>
+        <!-- Botones -->
+      </div>
+    
+      <div class="bg-white my-8">
+    <br>
+       
+    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4">
+      <!-- chanvea el diseño qui -->
+    
+    
+      <% for(var i = 0; i< data.length; i++) { %>
+      
+      <div class="w-full rounded-xl shadow-lg pb-2">
+        <div>
+          <img class="rounded-t-xl" src="/imagen" alt="">
+        </div>
+        <div>
+          <p class="m-4 text-center"><%= data[i].datos %></p>
+        </div>
+        <div class="m-4 text-center">
+          <a class="m-4 text-center"><%= data[i].ol_descripcion %></a>
+          <a class="m-4 text-center"><%= data[i].ol_fecha_inicio %></a>
+          <a class="m-4 text-center"><%= data[i].ol_estado %></a>
+          
+          <p class="m-4 text-center"><%= data[i].ol_salario %></p>
+         
+        </div>
+        <div class="m-4 text-right">
+          <a class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-300" href="">Ver perfil</a>
+        </div>
+      </div>
+      <% } %>
+      
+    </div>
+        
 
 <br>
     
