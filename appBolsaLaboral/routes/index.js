@@ -109,7 +109,7 @@ router.get('/admin/dashboard_emp', function(req, res, next) {
 
 router.get('/admin/dashboard_egs', function(req, res, next) {
  if (req.session.rol === "3") {
-   res.render('admin/index_egs');
+   res.render('admin/egresado-ol');
  } else {
    res.redirect("login");
  }
