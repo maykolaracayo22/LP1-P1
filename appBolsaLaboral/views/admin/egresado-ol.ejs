@@ -271,7 +271,8 @@
   
 
   <div class="content-wrapper ">
-
+    
+    <% for(var i = 0; i< data.length; i++) { %>
       <div class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-2">
 
         <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
@@ -279,9 +280,12 @@
             <img class="rounded-t-md " src="../images/ol-2.png" alt="">
           </div>
           <div>
-            <h3 class="text-center bg-sky-800 text-white text-lg  ">Programación y desarrollo de software:</h3>
-            <p class="m-4 text-center"> Es importante tener experiencia en lenguajes de programación como Java, Python,
-              C++, y ser capaz de desarrollar y mantener aplicaciones y sistemas.</p>
+            <h3 class="text-center bg-sky-800 text-white text-lg  "><%= data[i].datos %></h3>
+            <p class="m-4 text-center"> <%= data[i].ol_descripcion %>.</p>
+            <a class="m-4 text-center"><%= data[i].ol_fecha_inicio %></a>
+            <a class="m-4 text-center"><%= data[i].ol_estado %></a>
+            
+            <p class="m-4 text-center"><%= data[i].ol_salario %></p>
           </div>
           <div class="m-4 text-center">
             <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="oferta-egresado-1">Ver Info</a>
@@ -289,33 +293,6 @@
           </div>
         </div>
 
-        <div class="custom-shadow border-indigo-100 border-3 rounded-md m-1">
-        
-        
-          <% for(var i = 0; i< data.length; i++) { %>
-          <div>
-            <img class="rounded-t-md " src="../images/ol-2.png" alt="">
-          </div>
-          <div>
-            <p class="m-4 text-center"><%= data[i].datos %></p>
-          </div>
-          <div>
-            <h3 class="text-center bg-sky-800 text-white text-lg  "><%= data[i].ol_descripcion %>.</p>
-          </div>
-           
-            <div class="m-4 text-center">
-              <a class="m-4 text-center"><%= data[i].ol_descripcion %></a>
-              <a class="m-4 text-center"><%= data[i].ol_fecha_inicio %></a>
-              <a class="m-4 text-center"><%= data[i].ol_estado %></a>
-              
-              <p class="m-4 text-center"><%= data[i].ol_salario %></p>
-             
-            </div>
-            <div class="m-4 text-center">
-              <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="oferta-egresado-1">Ver Info</a>
-              <a class="bg-sky-800 text-white py-2 px-4 rounded-md hover:bg-indigo-400" href="egresado-apli">Aplicar</a>
-            </div>
-          </div>
           <% } %>
           
         </div>

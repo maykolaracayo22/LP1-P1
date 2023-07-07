@@ -1,0 +1,73 @@
+<%- include('inicio/encabezado'); %>
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 bg-gradient-to-r from-transparent to-transparent">
+      <!-- Item 1 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+       
+      </div>
+    </div>
+    <div class="absolute left-0 bottom-0 mb-4 ml-4">
+      <h1 class="mb-4 text-6xl font-serif font-bold leading-none tracking-tight text-transparent bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text">CANDIDATOS</h1>
+    </div>
+    <!-- Botones -->
+  </div>
+
+  <div class="bg-white my-8">
+<br>
+   
+<div class="flex items-center justify-center">
+    <a href="#" class="flex flex-col items-center w-full max-w-xl p-4 my-4 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:rounded-lg md:p-8 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <img class="object-cover w-full h-96 md:w-48 md:h-auto md:rounded-none md:rounded-l-lg" src="images/person_9.jpg" alt="">
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">BUSCAR PROFECIONALES</h5>
+        <div class="p-2 mx-auto text-gray-600 flex justify-center">
+          <form action="search" method="POST">
+            <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 w-96 rounded-lg text-sm focus:outline-none mr-1"
+            type="search" name="search" placeholder="Search">
+            <input type="submit"  class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-300">
+          
+          </form>
+          </div>    
+          </div>
+    </a>
+  </div>
+  <BR></BR>
+
+
+    
+
+<br>
+    </div>
+    
+
+
+<br>
+</div>
+
+</div>
+<div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4">
+    <% for(var i = 0; i< data.length; i++) { %>
+    <div class="w-full rounded-xl shadow-lg pb-2">
+      <div>
+        <img class="rounded-t-xl" src="images/foto.jpg" alt="">
+      </div>
+      <div>
+        <h3 class="text-center bg-indigo-600 text-white text-lg fon"><%= data[i].nombres %></h3>
+        <p class="m-4 text-center"><%= data[i].datos %></p>
+        <div class="text-center bg-indigo-600 text-white text-lg fon">
+          <a class="m-4 text-center"><%= data[i].ap_paterno %></a>
+          <a class="m-4 text-center"><%= data[i].ap_materno %></a>
+          <a class="m-4 text-center"><%= data[i].dni %></a>
+          <p class="m-4 text-center"><%= data[i].nacionalidad %></p>
+      </div>
+      </div>
+      <div class="m-4 text-right">
+        <a class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-300" href="">Ver perfil</a>
+      </div>
+    </div>
+    <% } %>
+    
+  </div>
+  </div>
+<%- include('inicio/pie'); %>
