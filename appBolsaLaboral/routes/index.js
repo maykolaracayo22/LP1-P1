@@ -28,10 +28,80 @@ router.post('/search', function(req, res, next) {
   
 });
 
+/* Para Acceder al Login Empresa y Egresado Medianto la nueva ruta registro.js. SIN PASSWORD NI EMAIL */
+
+router.get('/login-emp-egs', function(req, res, next) {
+  res.render('login-emp-egs');
+});
+
+router.post('/login-emp-egs', function(req, res, next) {
+  dbConn.query("SELECT * FROM usuarios", function(err, rows) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (rows.length > 0) {
+        req.session.idu = rows[0]["id"];
+        req.session.user = rows[0]["fullname"];
+        req.session.email = rows[0]["email"];
+        req.session.admin = true;
+        res.redirect("/registro/dashboard");
+      } else {
+        res.redirect("/");
+      }
+    }
+  });
+});
+
+router.get('/registro/dashboard', function(req, res, next) {
+  if(req.session.admin){
+    res.render('registro/index_registro')
+  }
+  else{
+    res.redirect("login-emp-egs")
+  }
+  res.render('registro/index_registro');
+});
+
+/* GET home page. */
 
 router.get('/admin/login', function(req, res, next) {
   res.render('login');
 });
+
+/* MI ADMIN 2 para registrar egresados */
+
+router.get('/admin2/login2', function(req, res, next) {
+  res.render('login2');
+});
+
+
+router.post('/admin2/login2', function(req, res, next) {
+  dbConn.query("SELECT * FROM usuarios", function(err, rows) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (rows.length > 0) {
+        req.session.idu = rows[0]["id"];
+        req.session.user = rows[0]["fullname"];
+        req.session.email = rows[0]["email"];
+        req.session.admin = true;
+        res.redirect("/admin2/dashboard2");
+      } else {
+        res.redirect("/");
+      }
+    }
+  });
+});
+
+router.get('/admin2/dashboard2', function(req, res, next) {
+  if(req.session.admin){
+    res.render('admin2/index2');
+  }
+  else{
+    res.redirect("login2");
+  }
+});
+
 
 router.get('/admin/crear_cuenta_egs', function(req, res, next) {
   res.render('crear_cuenta_egs');
@@ -41,12 +111,9 @@ router.get('/admin/crear_cuenta_emp', function(req, res, next) {
   res.render('crear_cuenta_emp');
 });
 
-
-
 router.get('/info', function(req, res, next) {
   res.render('info');
 });
-
 
 router.get('/contacto', function(req, res, next) {
   res.render('contacto');
@@ -130,6 +197,11 @@ router.get('/admin/dashboard_doc', function(req, res, next) {
 
 
 router.get('/admin/logout',function(req, res){
+  req.session.destroy();
+  res.redirect("/");
+});
+
+router.get('/admin2/logout',function(req, res){
   req.session.destroy();
   res.redirect("/");
 });

@@ -1,0 +1,62 @@
+<%- include('pantalla_egresado/header'); %>
+
+
+<section class="content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Crear Cuenta</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="crear-egresado-add" method="POST">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="egs_nombre">Nombre</label>
+                    <input name="egs_nombre" type="text" class="form-control"  placeholder="Ingrese nombre" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_ap_paterno">Apellido Paterno</label>
+                    <input name="egs_ap_paterno" type="text" class="form-control"  placeholder="Ingrese apellido paterno" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_ap_materno">Apellido Materno</label>
+                    <input name="egs_ap_materno" type="text" class="form-control" placeholder="Ingrese apellido materno" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_dni">DNI</label>
+                    <input name="egs_dni" type="text" class="form-control"  placeholder="Ingrese DNI" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_correo">Correo</label>
+                    <input name="egs_correo" type="text" class="form-control"  placeholder="Ingrese correo" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_celular">Celular</label>
+                    <input name="egs_celular" type="text" class="form-control"  placeholder="Ingrese celular" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="egs_fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input name="egs_fecha_nacimiento" type="date" class="form-control" " required>
+                  </div>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+              
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <%- include('pantalla_egresado/footer'); %>
