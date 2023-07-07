@@ -22,7 +22,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="/admin/dashboard_emp" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -244,21 +244,43 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../mioferta-edit/<%=id%>" method="POST">
+              <form action="../categorias-edit/<%=id%>" method="POST">
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Nombre categoría</label>
-                    <input name="nombre" value="<%=nombre%>" type="text" class="form-control" placeholder="Ingrese nombre">
+                    <label >descripcion</label>
+                    <input name="descripcion" value="<%=descripcion%>" class="form-control"  placeholder="Imgrese nombre">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label >fecha inicio</label>
+                    <input name="fecha_inicio" value="<%=fecha_inicio%>" class="form-control"  placeholder="Imgrese nombre">
                   </div>
                   <div class="form-group">
-                    <label>Descripción</label>                    
-                    <textarea name="descripcion" cols="30" rows="5" class="form-control" placeholder="Ingrese descripción"><%=descripcion%></textarea>
+                    <label >fecha fin</label>
+                    <input name="fecha_fin"  value="<%=fecha_fin%>" class="form-control"  placeholder="Imgrese nombre">
                   </div>
+                  <div class="form-group">
+                    <label >Estado</label>
+                    <input name="estado" value="<%=estado%>" class="form-control"  placeholder="Imgrese nombre">
+                  </div>
+                  <div class="form-group">
+                    <label >Salario</label>
+                    <input name="salario" value="<%=salario%>" class="form-control"  placeholder="Imgrese nombre">
+                  </div>
+                  <div class="form-group">
+                    <label >Jornada Laboral</label>
+                    <input name="jornada_laboral" value="<%=jornada_laboral%>" class="form-control"  placeholder="Imgrese nombre">
+                  </div>
+                  <div class="form-group">
+                    <label >Turno</label>
+                    <input name="turno" value="<%=turno%>" class="form-control"  placeholder="Imgrese nombre">
+                  </div>
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
-                  <a href="../mioferta" class="btn btn-secondary">Cancelar</a>
+                  <a href="../categorias" class="btn btn-secondary">Cancelar</a>
                 </div>
               </form>
             </div>
