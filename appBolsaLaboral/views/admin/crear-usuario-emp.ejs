@@ -1,0 +1,34 @@
+<%- include('pantalla_empresa/header'); %>
+
+<div class="content-wrapper">
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Crear mi Usuario Empresa</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Simple Tables</li>
+          </ol>
+        </div>
+      </div>
+      <% if (messages.success) { %>
+        <div class="alert alert-success" role="alert"><%- messages.success %></div>
+      <% } %>
+      <% if (messages.error) { %>
+        <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+      <% } %>      
+      <div class="text-center">
+        <a href="crear-empresa-add" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Crear Cuenta</a>
+      </div>
+      <div class="m-3 d-flex justify-content-center align-items-center">
+        <img src="../images/course-1.jpg" alt="">
+      </div>
+      
+      
+    </div><!-- /.container-fluid -->
+  </section>
+</div>
+<%- include('pantalla_empresa/footer'); %>

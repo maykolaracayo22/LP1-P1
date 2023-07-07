@@ -1,0 +1,59 @@
+<%- include('pantalla_empresa/header'); %>
+
+<section class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Datos de la Oferta Laboral</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form action="mioferta-add" method="POST">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Descripción</label>
+                <input name="ol_descripcion" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">fecha inicio</label>
+                <input name="ol_fecha_inicio" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">fecha fin</label>
+                <input name="ol_fecha_fin" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Estado</label>
+                <input name="ol_estado" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Salario</label>
+                <input name="ol_salario" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Jornada Laboral</label>
+                <input name="ol_jornada_laboral" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Turno</label>
+                <input name="ol_turno" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre" required>
+              </div>
+              
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Registar</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+<%- include('pantalla_empresa/footer'); %>
