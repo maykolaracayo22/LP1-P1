@@ -1,191 +1,95 @@
 <%- include('pantalla_empresa/header'); %>
-<style>
-  .section-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-  }
-
-  .section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .section-description {
-    font-size: 18px;
-    margin-top: 0;
-  }
-
-  .card-container {
-    display: inline-block;
-    width: calc(50% - 20px);
-    margin: 10px;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .card-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .card-description {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .card-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .card-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    background-color: #4c51bf;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease;
-    margin: 5px;
-  }
-
-  .card-button:hover {
-    background-color: #434190;
-  }
-
-  @media (max-width: 768px) {
-    .card-container {
-      width: 100%;
-    }
-  }
-
-  .background-container {
-    background-image: url("../images/image_3.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 800px;
-  }
-
-</style>
-
-</style>
-
-<div class="background-container">
-<div class="section-container">
-  <h2 class="section-title">Mis Ofertas Laborales</h2>
-</div>
-
-
-<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
-  <!--Card 1-->
-  <div class=" w-full lg:max-w-full lg:flex">
-    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
-    </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <div class="mb-8">
-        <p class="text-sm text-gray-600 flex items-center">
-          <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-          </svg>
-          Members only
-        </p>
-        <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="flex items-center">
-        <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-        <div class="text-sm">
-          <p class="text-gray-900 leading-none">John Smith</p>
-          <p class="text-gray-600">Aug 18</p>
-        </div>
-        
-      </div>
-      <BR></BR>
-      <DIv>
-        <a href="mioferta-edit" class="card-button"><i class="fas fa-eye"></i> edit</a>
-          <a href="mioferta-postulantes" class="card-button"><i class="fas fa-eye"></i> postulantes</a>
-       
-      </DIv>
-
-      </div>
-</div>
-  <!--Card 2-->
-  <div class=" w-full lg:max-w-full lg:flex">
-      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
-      </div>
-      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-        <div class="mb-8">
-          <p class="text-sm text-gray-600 flex items-center">
-            <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-              <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-            </svg>
-            Members only
-          </p>
-          <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-          <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-        </div>
-        <div class="flex items-center">
-          <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-          <div class="text-sm">
-            <p class="text-gray-900 leading-none">John Smith</p>
-            <p class="text-gray-600">Aug 18</p>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Usuarios Registrados</h1>
           </div>
-          
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            </ol>
+          </div>
         </div>
-        <BR></BR>
-        <DIv>
-          <a href="mioferta-edit" class="card-button"><i class="fas fa-eye"></i> edit</a>
-          <a href="mioferta-postulantes" class="card-button"><i class="fas fa-eye"></i> postulantes</a>
-        </DIv>
+        <% if (messages.success) { %>
+          <div class="alert alert-success" role="alert"><%- messages.success %></div>
+        <% } %>
+        <% if (messages.error) { %>
+          <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+        <% } %>      
+        <div class="text-right">
+          <a href="mioferta-add" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Usuario</a>
         </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Usuarios</h3>
+              </div>
+                       <!-- /.card-header -->
+                <div class="card-body p-0">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">Id</th>
+                          <th>Descripcion</th>
+                          <th>Fecha Inicio</th>
+                          <th>Fecha Fin</th>
+                          <th>Estado</th>
+                          <th>Salario</th>
+                          <th>Jornada Laboral</th>
+                          <th>Tuno</th>
+                          <th class="text-right" colspan="3">Opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% for(var i = 0; i< data.length; i++) { %>
+                          <tr>
+                            <td><%= (i+1) %></td>
+                            
+                            <td><%= data[i].ol_descripcion %></td>
+                            <td><%= data[i].ol_fecha_inicio %></td>
+                            <td><%= data[i].ol_fecha_fin %></td>
+                            <td><%= data[i].ol_estado %></td>
+                            <td><%= data[i].ol_salario %></td>
+                            <td><%= data[i].ol_jornada_laboral %></td>
+                            <td><%= data[i].ol_turno %></td>
+                      
+
+
+                            <td class="text-right">
+                            
+                              <!-- PARA ELIMINAR Y EDITAR -->
+                              <!-- Redideccionamos a productos-edit -->
+                              <a href="mioferta-edit/<%=data[i].ol_id%>" class="btn btn-info"><i
+                                  class="fas fa-edit"></i></a>
+                              <a href="mioferta-del/<%=data[i].ol_id%>"
+                                onclick="return alert('Estas Seguro que deseas Eliminar?')" class="btn btn-danger"><i
+                                  class="fas fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- /.content -->
   </div>
-  <!--Card 3-->
-  <div class=" w-full lg:max-w-full lg:flex">
-    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../images/bg_1.jpg')" title="Mountain">
-    </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <div class="mb-8">
-        <p class="text-sm text-gray-600 flex items-center">
-          <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-          </svg>
-          Members only
-        </p>
-        <div class="text-gray-900 font-bold text-xl mb-2">Best Mountain Trails 2020</div>
-        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="flex items-center">
-        <img class="w-10 h-10 rounded-full mr-4" src="../images/person_6.jpg" alt="Avatar of Writer">
-        <div class="text-sm">
-          <p class="text-gray-900 leading-none">John Smith</p>
-          <p class="text-gray-600">Aug 18</p>
-        </div>
-        
-      </div>
-      <BR></BR>
-      <DIv>
-        <a href="mioferta-edit" class="card-button"><i class="fas fa-eye"></i> edit</a>
-        <a href="mioferta-postulantes" class="card-button"><i class="fas fa-eye"></i> postulantes</a>
-       
-      </DIv>
-      </div>
-</div>
-
-</div>
-</div>
-
-</div>
-
+  <!-- /.content-wrapper -->
   <%- include('pantalla_empresa/footer'); %>

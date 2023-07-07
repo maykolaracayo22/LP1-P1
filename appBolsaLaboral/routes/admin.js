@@ -128,6 +128,8 @@ router.get('/admin-del/(:id)', function(req, res, next) {
         }
     })
 });
+
+/*empresa  */
 /* EMPRESA */
 
 router.get('/empresa-ver', function (req, res, next) {
@@ -232,9 +234,7 @@ router.get('/perfil', function (req, res, next) {
     res.render('admin/perfil');
 });
 
-router.get('/mioferta', function (req, res, next) {
-    res.render('admin/mioferta');
-});
+
 
 
 router.get('/descripcion', function (req, res, next) {
@@ -245,9 +245,7 @@ router.get('/ajustes', function (req, res, next) {
     res.render('admin/ajustes');
 });
 // oferta 
-router.get('/mioferta-edit', function (req, res, next) {
-    res.render('admin/mioferta-edit');
-});
+
 // oferta 
 router.get('/mioferta-postulantes', function (req, res, next) {
     res.render('admin/mioferta-postulantes');
@@ -299,5 +297,123 @@ router.get('/perfil-empresa', function(req, res, next) {
           res.render('admin/perfil-empresa',{data:rows});
       }
   });
+});
+
+/*mioferta */
+router.get('/mioferta', function(req, res, next) {
+    dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
+      if(err) {
+          req.flash('error', err);
+          res.render('admin/mioferta',{data:'[]'});   
+      }else {
+          res.render('admin/mioferta',{data:rows});
+      }
   });
+});
+router.get('/mioferta-add', function(req, res, next) {
+    res.render('admin/mioferta-add');
+});
+
+router.post('/mioferta-add', function(req, res, next) {
+    let ol_id = req.params.ol_id;
+    let ol_descripcion = req.body.ol_descripcion;
+    let ol_fecha_inicio = req.body.ol_fecha_inicio;
+    let ol_fecha_fin = req.body.ol_fecha_fin;
+    let ol_estado = req.body.ol_estado;
+    let ol_salario = req.body.ol_salario;
+    let ol_jornada_laboral = req.body.ol_jornada_laboral;
+    let ol_turno = req.body.ol_turno;
+    //console.log(nombre);
+
+    var form_data = {
+        ol_id: ol_id,
+        ol_descripcion :ol_descripcion,
+        ol_fecha_inicio:ol_fecha_inicio,
+        ol_fecha_fin:ol_fecha_fin,
+        ol_estado:ol_estado,
+        ol_salario:ol_salario,
+        ol_jornada_laboral :ol_jornada_laboral,
+        ol_turno :ol_turno
+    }
+    dbConn.query('INSERT INTO oferta_laboral SET ?', form_data, function(err, result) {
+        if (err) {
+            req.flash('error', err);
+        }else {                
+            req.flash('success', 'mioferta registrada satisfactoriamente');
+            res.redirect('../admin/mioferta');
+        }
+    })
+    
+});
+
+router.get('/mioferta-edit/(:ol_id)', function(req, res, next) {
+    let ol_id = req.params.ol_id;
+    //console.log(id);
+    dbConn.query('SELECT * FROM oferta_laboral WHERE ol_id='+id,function(err, rows, fields) {
+        if(err) throw err
+        if (rows.length <= 0) {
+            req.flash('error', 'Ninguna categoria tiene el ol_id = '+id)
+            res.redirect('admin/mioferta')
+        }
+        else {
+            res.render('admin/mioferta-edit', {
+                ol_id:rows[0]. ol_id,
+                ol_descripcion :rows[0].ol_descripcion,
+                ol_fecha_inicio:rows[0].ol_fecha_inicio,
+                ol_fecha_fin:rows[0].ol_fecha_fin,
+                ol_estado:rows[0].ol_estado,
+                ol_salario:rows[0].ol_salario,
+                ol_jornada_laboral :rows[0].ol_jornada_laboral,
+                ol_turno :rows[0].ol_turno
+               
+            })
+        }
+    })
+});
+
+router.post('/mioferta-edit/(:ol_id)', function(req, res, next) {
+    let ol_id = req.params.ol_id;
+    let ol_descripcion = req.body.ol_descripcion;
+    let ol_fecha_inicio = req.body.ol_fecha_inicio;
+    let ol_fecha_fin =req.body.ol_fecha_fin;
+    let ol_estado = req.body.ol_estado;
+    let ol_salario = req.body.ol_salario;
+    let ol_jornada_laboral = req.body.ol_jornada_laboral;
+    let ol_turno = req.body.ol_turno; 
+
+
+    var form_data = {
+        ol_id: ol_id,
+        ol_descripcion :ol_descripcion,
+        ol_fecha_inicio:ol_fecha_inicio,
+        ol_fecha_fin:ol_fecha_fin,
+        ol_estado:ol_estado,
+        ol_salario:ol_salario,
+        ol_jornada_laboral :ol_jornada_laboral,
+        ol_turno :ol_turno
+    }
+    dbConn.query('UPDATE oferta_laboral SET ? WHERE ol_id='+id,form_data,function(err, result) {
+        if (err) {
+            req.flash('error', err);
+        } else {
+            req.flash('success', 'Mioferta actualizada correctamente');
+            res.redirect('../mioferta');
+        }
+    })
+    
+});
+
+router.get('/mioferta-del/(:ol_id)', function(req, res, next) {
+    let ol_id = req.params.ol_id;
+    dbConn.query('DELETE FROM oferta_laboral WHERE ol_id='+id,function(err, result) {
+        if (err) {
+            req.flash('error', err)
+            res.redirect('../mioferta')
+        } else {
+            req.flash('success', 'Registro eliminado con ID = ' + id)
+            res.redirect('../mioferta')
+        }
+    })
+});
+
 module.exports = router;

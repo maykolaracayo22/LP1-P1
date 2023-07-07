@@ -15,15 +15,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/search', function(req, res, next) {
-  let name=req.body.search;
-  dbConn.query('SELECT * FROM egresados WHERE nombre like ?', ['%' + name + '%'], function(err, rows) {
-    if(err){
-      req.flash('error',err);
-      res.render('index',{data:''}); 
-    }else{
-      res.render('index', {data:rows});
+  let name = req.body.search;
+  
+  dbConn.query("SELECT * FROM egresado WHERE egs_nombre LIKE ?", ['%' + name + '%'], function(err, rows) {
+    if(err) {
+        req.flash('error', err);
+        res.render('candidatos',{data:''});   
+    }else {
+        res.render('candidatos',{data:rows});
     }
-  });
+});
+  
 });
 
 
@@ -93,7 +95,7 @@ router.post('/admin/login', function(req, res, next) {
  });
 });
 
-
+//----------------------------------//
 router.get('/admin/dashboard_admin', function(req, res, next) {
   if (req.session.rol === "1") {
     res.render('admin/index_admin');
@@ -125,7 +127,6 @@ router.get('/admin/dashboard_doc', function(req, res, next) {
    res.redirect("login");
  }
 });
-
 
 
 router.get('/admin/logout',function(req, res){
