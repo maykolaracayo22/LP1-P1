@@ -6,9 +6,7 @@ var dbConn = require('../lib/db');
 
 /* EGRESADO */
 
-router.get('/egresado-ol', function(req, res, next) {
-    res.render('admin/egresado-ol');
-});
+
 
 // router.get('/oferta-egresado-1', function(req, res, next) {
 //     res.render('admin/oferta-egresado-1');
@@ -76,6 +74,60 @@ router.post('/admin-add', function (req, res, next) {
 
 });
 
+router.get('/admin-edit/(:id)', function(req, res, next) {
+    let id = req.params.id;
+    //console.log(id);
+    dbConn.query('SELECT * FROM usuarios WHERE id='+id,function(err, rows, fields) {
+        if(err) throw err
+        if (rows.length <= 0) {
+            req.flash('error', 'Ninguna usuarios tiene el id = '+id)
+            res.redirect('admin/admin')
+        }
+        else {
+            res.render('admin/admin-edit', {
+                id: rows[0].id,
+                email: rows[0].email,
+                password: rows[0].password,
+            
+                rol: rows[0].rol
+            })
+        }
+    })
+});
+
+router.post('/admin-edit/:id', function(req, res, next) {
+    let email = req.body.email;
+    let password = req.body.password;
+    let rol = req.body.rol;
+
+    var form_data = {
+        email: email,
+        password: password,
+        rol: rol
+    }
+    dbConn.query('UPDATE usuarios SET ? WHERE id='+id,form_data,function(err, result) {
+        if (err) {
+            req.flash('error', err);
+        } else {
+            req.flash('success', 'Categoria actualizada correctamente');
+            res.redirect('../admin');
+        }
+    })
+    
+});
+
+router.get('/admin-del/(:id)', function(req, res, next) {
+    let id = req.params.id;
+    dbConn.query('DELETE FROM usuarios WHERE id='+id,function(err, result) {
+        if (err) {
+            req.flash('error', err)
+            res.redirect('../admin')
+        } else {
+            req.flash('success', 'Registro eliminado con ID = ' + id)
+            res.redirect('../admin')
+        }
+    })
+});
 /* EMPRESA */
 
 router.get('/empresa-ver', function (req, res, next) {
@@ -210,22 +262,42 @@ router.get('/empresa-ver', function (req, res, next) {
 
 /* DOCENTE */
 
+
+
 router.get('/monitoreo', function(req, res, next) {
-    res.render('admin/monitoreo');
+ 
+
+    dbConn.query('SELECT * FROM egresado ORDER BY egs_id desc',function(err,rows){
+    if(err) {
+        req.flash('error', err);
+        res.render('admin/monitoreo',{data:'[]'});   
+    }else {
+        res.render('admin/monitoreo',{data:rows});
+    }
+});
 });
 
-router.get('/monitoreo', function(req, res, next) {
-    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc',function(err,rows)     {
- 
-        if(err) {
-            req.flash('error', err);
-            // render to views/books/index.ejs
-            res.render('admin/monitoreo',{data:''});   
-        } else {
-            res.render('admin/monitoreo',{data:rows});
-        }
-    });
 
+/*Egresado ol*/
+router.get('/egresado-ol', function(req, res, next) {
+  dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
+    if(err) {
+        req.flash('error', err);
+        res.render('admin/egresado-ol',{data:'[]'});   
+    }else {
+        res.render('admin/egresado-ol',{data:rows});
+    }
+});
+});
+/*perfil-empresa ol*/
+router.get('/perfil-empresa', function(req, res, next) {
+    dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
+      if(err) {
+          req.flash('error', err);
+          res.render('admin/perfil-empresa',{data:'[]'});   
+      }else {
+          res.render('admin/perfil-empresa',{data:rows});
+      }
   });
-
+  });
 module.exports = router;
