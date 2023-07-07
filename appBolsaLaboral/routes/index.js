@@ -54,6 +54,9 @@ router.get('/registro-emp', function(req, res, next) {
   res.render('registro-emp');
 });
 
+router.get('/reportar', function(req, res, next) {
+  res.render('reportar');
+});
 
 router.post('/admin/login', function(req, res, next) {
   email = req.body.email;
