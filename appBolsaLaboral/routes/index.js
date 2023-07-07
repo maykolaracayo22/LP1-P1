@@ -160,41 +160,48 @@ router.get('/empleos', function(req, res, next) {
 });
 
 
-//--rout d eimg
+//PARA REGISTRAR AL EGRESADO;
 
-router.post('/crear_cuenta_egs', function(req, res, next) { 
 
+router.get('/crear_cuenta_egs', function(req, res, next) {
+  // Renderizar la vista 'crear_cuenta_egs'
+  res.render('crear_cuenta_egs');
+});
+
+router.post('/crear_cuenta_egs', function(req, res, next) {
   let egs_nombre = req.body.egs_nombre;
   let egs_ap_paterno = req.body.egs_ap_paterno;
   let egs_ap_materno = req.body.egs_ap_materno;
   let egs_dni = req.body.egs_dni;
   let egs_correo = req.body.egs_correo;
+  let egs_celular = req.body.egs_celular;
   let egs_fecha_nacimiento = req.body.egs_fecha_nacimiento;
-
 
   //console.log(nombre);
 
-      var form_data = {
-        egs_nombre: egs_nombre,
-        egs_ap_paterno: egs_ap_paterno,
-        egs_ap_materno: egs_ap_materno,
-        egs_dni: egs_dni,
-        egs_correo: egs_correo,
-        egs_fecha_nacimiento: egs_fecha_nacimiento
-
-      }
+  var form_data = {
+      egs_nombre: egs_nombre,
+      egs_ap_paterno: egs_ap_paterno,
+      egs_ap_materno: egs_ap_materno,
+      egs_dni: egs_dni,
+      egs_correo: egs_correo,
+      egs_celular: egs_celular,
+      egs_fecha_nacimiento: egs_fecha_nacimiento
       
-      // insert query
-      dbConn.query('INSERT INTO egresado SET ?', form_data, function(err, result) {
-          //if(err) throw err
-          if (err) {
-              req.flash('error', err)
-          } else {                
-              req.flash('success', 'egresado registrada satisfactoriamente');
-              res.redirect('egresado');
-          }
-      })
+  }
+  dbConn.query('INSERT INTO egresado SET ?', form_data, function (err, result) {
+      if (err) {
+          req.flash('error', err);
+      } else {
+          req.flash('success', 'Usuario registrado satisfactoriamente');
+          res.redirect('/');
+      }
+  })
 
 });
 
-module.exports = router;
+module.exports = router;
+
+
+
+
