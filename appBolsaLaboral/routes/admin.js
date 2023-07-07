@@ -6,7 +6,7 @@ var dbConn = require('../lib/db');
 
 /* EGRESADO */
 
-router.get('/egresado-ol', function(req, res, next) {
+router.get('/egresado-ol', function (req, res, next) {
     res.render('admin/egresado-ol');
 });
 
@@ -25,7 +25,6 @@ router.get('/perfil-empresa', function (req, res, next) {
 router.get('/home', function (req, res, next) {
     res.render('admin/home');
 });
-
 
 /* INICIO COPIA*/
 
@@ -46,8 +45,6 @@ router.get('/admin', function (req, res, next) {
         }
     });
 });
-
-
 
 router.get('/admin-add', function (req, res, next) {
     res.render('admin/admin-add');
@@ -76,11 +73,112 @@ router.post('/admin-add', function (req, res, next) {
 
 });
 
+/* CREAR EGRESADO */
+
+router.get('/crear-egresado-add', function (req, res, next) {
+    res.render('admin/crear-egresado-add');
+});
+
+router.post('/crear-egresado-add', function (req, res, next) {
+    let egs_nombre = req.body.egs_nombre;
+    let egs_ap_paterno = req.body.egs_ap_paterno;
+    let egs_ap_materno = req.body.egs_ap_materno;
+    let egs_dni = req.body.egs_dni;
+    let egs_correo = req.body.egs_correo;
+    let egs_celular = req.body.egs_celular;
+    let egs_fecha_nacimiento = req.body.egs_fecha_nacimiento;
+
+    //console.log(nombre);
+
+    var form_data = {
+        egs_nombre: egs_nombre,
+        egs_ap_paterno: egs_ap_paterno,
+        egs_ap_materno: egs_ap_materno,
+        egs_dni: egs_dni,
+        egs_correo: egs_correo,
+        egs_celular: egs_celular,
+        egs_fecha_nacimiento: egs_fecha_nacimiento
+    }
+    dbConn.query('INSERT INTO egresados SET ?', form_data, function (err, result) {
+        if (err) {
+            req.flash('error', err);
+        } else {
+            req.flash('success', 'Registrado satisfactoriamente');
+            res.redirect('../admin/crear-usuario-egs');
+        }
+    })
+
+});
+
+/* CREAR EMPRESA */
+
+
+router.get('/crear-empresa-add', function (req, res, next) {
+    res.render('admin/crear-empresa-add');
+});
+
+router.post('/crear-empresa-add', function (req, res, next) {
+    let emp_razon_social = req.body.emp_razon_social;
+    let emp_direccion	 = req.body.emp_direccion;
+    let emp_ruc	 = req.body.emp_ruc;
+    let emp_celular = req.body.emp_celular;
+    let emp_rubro = req.body.emp_rubro;
+    let emp_correo = req.body.emp_correo;
+    let emp_lugar = req.body.emp_lugar;
+
+    console.log('emp_razon_social:', emp_razon_social);
+    console.log('emp_direccion:', emp_direccion);
+    console.log('emp_ruc:', emp_ruc);
+    console.log('emp_celular:', emp_celular);
+    console.log('emp_rubro:', emp_rubro);
+    console.log('emp_correo:', emp_correo);
+    console.log('emp_lugar:', emp_lugar);
+
+    //console.log(nombre);
+
+    var form_data = {
+       
+
+        emp_razon_social: emp_razon_social,
+        emp_direccion: emp_direccion,
+        emp_ruc: emp_ruc,
+        emp_celular: emp_celular,
+        emp_rubro: emp_rubro,
+        emp_correo: emp_correo,
+        emp_lugar: emp_lugar
+    }
+    dbConn.query('INSERT INTO empresa SET ?', form_data, function (err, result) {
+        if (err) {
+            console.log('Error:', err);
+
+            req.flash('error', err);
+        } else {
+            console.log('Insert successful!');
+
+            req.flash('success', 'Registrado satisfactoriamente');
+            res.redirect('../admin/crear-usuario-emp');
+        }
+    })
+
+});
+
+
+
 /* EMPRESA */
 
 router.get('/empresa-ver', function (req, res, next) {
     res.render('admin/empresa-ver');
 });
+
+router.get('/crear-usuario-egs', function (req, res, next) {
+    res.render('admin/crear-usuario-egs');
+});
+
+router.get('/crear-usuario-emp', function (req, res, next) {
+    res.render('admin/crear-usuario-emp');
+});
+
+
 
 
 /* CATEGORIAS */
@@ -210,22 +308,22 @@ router.get('/empresa-ver', function (req, res, next) {
 
 /* DOCENTE */
 
-router.get('/monitoreo', function(req, res, next) {
+router.get('/monitoreo', function (req, res, next) {
     res.render('admin/monitoreo');
 });
 
-router.get('/monitoreo', function(req, res, next) {
-    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc',function(err,rows)     {
- 
-        if(err) {
+router.get('/monitoreo', function (req, res, next) {
+    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc', function (err, rows) {
+
+        if (err) {
             req.flash('error', err);
             // render to views/books/index.ejs
-            res.render('admin/monitoreo',{data:''});   
+            res.render('admin/monitoreo', { data: '' });
         } else {
-            res.render('admin/monitoreo',{data:rows});
+            res.render('admin/monitoreo', { data: rows });
         }
     });
 
-  });
+});
 
 module.exports = router;

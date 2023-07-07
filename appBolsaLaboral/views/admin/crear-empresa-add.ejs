@@ -1,0 +1,61 @@
+<%- include('pantalla_empresa/header'); %>
+
+
+<section class="content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Crear Cuenta</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="crear-empresa-add" method="POST">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="emp_razon_social">Razón Social</label>
+                        <input name="emp_razon_social" type="text" class="form-control" placeholder="Ingrese razón social" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_direccion">Dirección</label>
+                        <input name="emp_direccion" type="text" class="form-control" placeholder="Ingrese dirección" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_ruc">RUC</label>
+                        <input name="emp_ruc" type="text" class="form-control" placeholder="Ingrese RUC" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_celular">Celular</label>
+                        <input name="emp_celular" type="text" class="form-control" placeholder="Ingrese celular" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_rubro">Rubro</label>
+                        <input name="emp_rubro" type="text" class="form-control" placeholder="Ingrese rubro" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_correo">Correo</label>
+                        <input name="emp_correo" type="text" class="form-control" placeholder="Ingrese correo" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="emp_lugar">Lugar</label>
+                        <input name="emp_lugar" type="text" class="form-control" placeholder="Ingrese lugar" required>
+                      </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+              
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <%- include('pantalla_empresa/footer'); %>
