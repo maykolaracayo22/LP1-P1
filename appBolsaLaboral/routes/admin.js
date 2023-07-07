@@ -6,7 +6,7 @@ var dbConn = require('../lib/db');
 
 /* EGRESADO */
 
-router.get('/egresado-ol', function (req, res, next) {
+router.get('/egresado-ol', function(req, res, next) {
     res.render('admin/egresado-ol');
 });
 
@@ -210,22 +210,22 @@ router.get('/empresa-ver', function (req, res, next) {
 
 /* DOCENTE */
 
-router.get('/monitoreo', function (req, res, next) {
+router.get('/monitoreo', function(req, res, next) {
     res.render('admin/monitoreo');
 });
 
-router.get('/monitoreo', function (req, res, next) {
-    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc', function (err, rows) {
-
-        if (err) {
+router.get('/monitoreo', function(req, res, next) {
+    dbConn.query('SELECT * FROM monitoreo ORDER BY id desc',function(err,rows)     {
+ 
+        if(err) {
             req.flash('error', err);
             // render to views/books/index.ejs
-            res.render('admin/monitoreo', { data: '' });
+            res.render('admin/monitoreo',{data:''});   
         } else {
-            res.render('admin/monitoreo', { data: rows });
+            res.render('admin/monitoreo',{data:rows});
         }
     });
 
-});
+  });
 
 module.exports = router;
