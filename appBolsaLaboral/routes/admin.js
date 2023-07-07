@@ -278,7 +278,6 @@ router.get('/monitoreo', function(req, res, next) {
 });
 
 
-
 /*Egresado ol*/
 router.get('/egresado-ol', function(req, res, next) {
   dbConn.query('SELECT * FROM oferta_laboral ORDER BY ol_id desc',function(err,rows){
